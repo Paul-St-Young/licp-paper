@@ -1,9 +1,10 @@
 %\documentclass[aps,prl,preprint]{revtex4-1}
 \documentclass[aps,prb,showpacs,preprintnumbers,amsmath,amssymb,superscriptaddress,twocolumn]{revtex4}
-%\usepackage{amsmath,amsfonts,amssymb}
 \usepackage{graphicx}
 \usepackage{comment}
+%\usepackage[caption=false]{subfig}
 %\usepackage{subcaption}
+%\captionsetup[subfigure]{labelformat=brace}
 \usepackage{hyperref}
 \usepackage{braket}
 
@@ -88,24 +89,31 @@ We use the grand-canonical twist average technique to improve the momentum distr
 
 We use MD with the modified embedded-atom potential (MEAM)~\cite{Baskes1992} to generate the disordered configurations. We sample the canonical distribution with 432 lithium atoms at 330K and 500K for experiments at 298K and 493K, respectively. We elevate the classical MD temperatures to roughly account for quantum fluctuations of the nuclei ~\cite{Filippi1998}.
 
-All calculations have been performed at the same density $r_s=3.25$, consistent with the previous QMC study~\cite{Filippi1999}. After obtaining the best QMC results at $r_s=3.25$, we rescale the QMC Compton profiles to compare with experiment. The experimental densities are $r_s=3.31$ and $r_s=3.265$ for the liquid and the solid, respectively.
+All calculations have been performed at the same density $r_s=3.25$, consistent with the previous QMC study~\cite{Filippi1999}. After obtaining the best QMC results at $r_s=3.25$, we rescale the density of QMC Compton profiles to compare with experiment. The experimental densities are $r_s=3.31$ and $r_s=3.265$ for the liquid and the solid, respectively.
 We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
 
 \section{Results} \label{sec:results}
 
-In Fig.~\ref{fig:sl-jp-djp}, we show the QMC Compton profiles in the disordered solid and the liquid phases. The main difference between the liquid and the solid momentum distributions is the absence of secondary Fermi surfaces caused by Umklapp processes.
+In Fig.~\ref{fig:sl-jp-djp}, we show the valence Compton profiles of solid and liquid lithium from experiment and processed QMC data. The raw QMC data are processed to account for finite-size effect, thermal disorder, pseudopotential bias, density change, final-state effects, and experimental instrument resolution. The QMC Compton profiles agree with experiment immediately inside the Fermi surface (0.3 a.u.$<$p$<$0.5 a.u.) and at large momenta (p$>$1.3  a.u.). However, the QMC Compton profiles show less high-momentum component immediately outside the Fermi surface and too much zero-momentum component. Both the theoretical and experimental Compton profiles satisfy the normalization sum rule ($\int_{-\infty}^{\infty} J(p)dp=1$) to better than 1\%. The difference between QMC and experiment Compton profiles can be interpreted as a shift of momentum density from zero to slightly above the Fermi momentum. Interestingly, the difference between QMC and experiment is almost identical in the solid and the liquid. This allowed us to capture the difference between the solid and liquid Compton profiles almost perfectly.
 
-\begin{figure*}[ht]
-\includegraphics[scale=0.49]{figures/li52e_sl-jp}
-\includegraphics[scale=0.49]{figures/li52e_sl-djp}
-\caption{solid and liquid lithium Compton profiles from QMC and experiment.\label{fig:sl-jp-djp}}
-\end{figure*}
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{figures/li52e_sl-jp}
+\caption{Compton profiles of solid and liquid lithium from QMC and experiment. The top panel shows the Compton profiles on an absolute scale. The bottom panel shows the QMC Compton profiles relative to the experiment.\label{fig:sl-jp-djp}}
+\end{figure}
 
-As shown in Fig.~\ref{fig:sl-jp-djp}, the remaining discrepancy between the pseudopotential-corrected QMC and experiment Compton profiles is on the order of 0.01 a.u. and peaks around the Fermi momentum.
+In Fig.~\ref{fig:s-l-djp}, we show the change of the Compton profile when the liquid freezes into a solid. The main difference between the solid and the liquid Compton profiles is a density-induced outward shift of the Fermi surface. This shift manifests in the Compton profile as a peak at the solid Fermi momentum $p_F\approx0.578$ a.u. and a parabolic dip centered around $p=0$. Another important difference is the emergence of secondary Fermi surfaces. Due to Umklapp scattering, we expect secondary Fermi surfaces to center around the reciprocal lattice of the lithium crystal. Crystalline lithium is BCC with a lattice constant of $\sim 6.63$ bohr, so its reciprocal lattice is FCC with a lattice constant of $\sim 1.895$ a.u.. The nearest neighbor to $\Gamma$ is $p_1=1.34$ a.u. away along [110]. Therefore, the closest secondary Fermi surface is located at $p_1-p_F=0.762$ a.u., which is exactly where we observe a small peak.
+
+
+\begin{figure}[h]
+\includegraphics[width=\linewidth]{figures/li52e_sl-djp}
+\caption{Difference between solid and liquid Compton profiles\label{fig:s-l-djp}}
+\end{figure}
+
+As mentioned in the beginning of this section, we process the raw QMC data in several steps to make them comparable to experiment. In the following, we present QMC data obtained from perfect crystalline lithium, which we use to validate the processing steps.
 
 In Fig.~\ref{fig:nk}, 1D slices of the QMC valence momentum distributions are shown. The momentum distribution is free-electron-like along the [100] and [111] directions. Along the [110] direction, however, there is a pronounced secondary Fermi surface, which is centered around the Bragg peak of the BCC crystal. The valence profile calculated from the full-core calculation is flatter inside the Fermi surface and has enhanced secondary features when compared to the pseudopotential calculation. To obtain the valence momentum distribution from the full-core QMC calculation (red lines), we remove the momentum distribution of the 1s core electrons. The 1s orbital of the neutral lithium atom is calculated using Hatree-Fock (HF). The most pronounced effect of the pseudopotential is to increase the electronic momentum density inside the Fermi surface, raising $n(0)$ by more than 5\%. In contrast, the effect of increasing system size peaks at the Fermi momentum. The main effect of finite system size is to increase the magnitude of the discontinuity at the Fermi momentum. The effects of pseudopotential and finite system size can be better shown in the momentum distribution differences.
 
-\begin{figure}
+\begin{figure}[h]
 \includegraphics[scale=0.45]{figures/li40_bfd3-n54-nk-ppc}
 \includegraphics[scale=0.45]{figures/li40_bfd3-nk-fsc}
 \caption{Momentum distribution of valence electrons in lithium BCC crystal. The top panel compares pseudopotential (purple) to full-core (red) result.
