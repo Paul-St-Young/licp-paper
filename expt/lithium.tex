@@ -202,9 +202,8 @@ The obtained CPs were corrected for the self-absorption, background, multiple sc
 
 \vspace{10mm}
 
-Quantum Monte Carlo calculations were performed as follows.
-**********************************
-The details will be described elsewhere. 
+Quantum Monte Carlo calculations were performed on molecular dynamics (MD) configurations sampled at 330K and 500K for the solid and the liquid phases, respectively. The classical MD temperatures were elevated to roughly account for the quantum fluctuations of the nuclei~\cite{filippi98}. We used Slater-Jastrow wavefunction with LDA orbitals on simulation cells containing 432 lithium atoms. Finite-size error of spherically average momentum distribution was corrected following~\cite{holz09}. Pseudopotential error was corrected using an all-electron calculation performed on the perfect crystal. All calculations were performed at the same density $r_s=3.25$. We rescaled the momentum distributions to experimental densities ($r_s=3.265$ for the solid and $r_s=3.31$ for the liquid) in post-processing. Fermi momenta of the MD configurations were determined by unfolding the LDA bands from 432-atom supercell to the primitive cell Brillouin zone. The unfolding has been performed using the BandUP code~\cite{Medeiros2014,Medeiros2015}.  We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
+More computational details will be described elsewhere.
 
 \vspace{10mm}
 
@@ -311,6 +310,18 @@ Table-I summarizes the $Z_F$s.
 The theory originally provides $Z_F$ = 0.76 for liquid and 0.78 solid  (see, Theory-I in TABLE-I) .
 They are diminished to 0.74 and 0.76 after the convolution by $b(p)$ (Theory-II), meaning the experimentally observed $Z_F$ requires the correction for this, which amounts to 2.8 \%.
 The experimental $Z_F\,$s are 0.62 (L) and 0.65 (S). After the corrections, we have $Z_F\,$s = 0.64 (L) and 0.67 (S) at the end.    
+
+
+\vspace{10mm}
+
+The log-log fits still tend to overestimate $Z_{k_F}$ because the momentum distribution is expected to have divergent slope at $k_F$~\cite{gg02}. To overcome this bias, we fit the QMC $n(k)$ to exact RPA form in a small region around $k_F$. Specifically, the QMC momentum distribution of each MD configuration is scaled to the range $\tilde{n}(x) \in [0, 1]$, where $x\equiv k/k_F$. Then, data near the Fermi break $x\in(0.8, 0.97)$ and $x\in(1.02, 1.2)$ are separately fitted to eq.~(\ref{eq:rpa-nk})
+\begin{equation} \label{eq:rpa-nk}
+\tilde{n}(x) = n_1 + A\vert 1-x\vert log\left(\vert 1-x\vert\right),
+\end{equation}
+where $n_1$ and $A$ are fitting parameters. Points too close to the $k_F$ are excluded because spherical average of anisotropic $n(\boldsymbol{k})$ smears out the Fermi break. The $n(k)$ discontinuity is extracted as the difference between the $n_1$ parameter of the left and right fits $\zeta_{k_F}= n_1^--n_1^+$. We average the obtained $\zeta_{k_F}$ over all MD configurations and multiply by $1/n_{k_F}^{LDA}$ to obtain the true $Z_{k_F}$. The QMC $\zeta_{k_F}$ obtained in this way are $0.57\pm0.01$ and $0.49\pm0.01$ for the solid and liquid, respectively. The $Z_{k_F}$s are $0.69\pm0.01$ and $0.59\pm0.01$ ($n_{k_F}^{LDA}\approx0.83$).
+The RPA form eq.~(\ref{eq:rpa-nk}) cannot be straight-forwardly fitted to the experimental data due to resolution and final-state smearing effects at $k_F$. We therefore view the good agreement between QMC and experiment away from $k_F$ as support for our QMC $Z_{k_F}$ results.
+
+\vspace{10mm}
 
 Finally we evaluate the error bars on our experimental outputs.
 The main errors arise from uncertainty of SDF for the final state.
