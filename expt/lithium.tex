@@ -9,6 +9,7 @@
 \usepackage{bm}% bold math
 \usepackage{amssymb}
 \usepackage{amsmath} 
+\usepackage{xcolor}
 %\usepackage{multicol}
 %\usepackage{umlaut}
 \newcommand{\bb}[1]{\textbf{ #1}}
@@ -103,13 +104,13 @@ Department of Physics, University of Illinois, Urbana, Illinois 61801, USA
 \date{}
 \begin{abstract}
 
-An ultimate goal for electron momentum density measurements over their long history is to directly observe the momentum distribution of quasi particles in metals and determine the renormalization factor $Z_F$.
-We have measured the momentum distribution in liquid and solid lithium by high-resolution Compton scattering so as to determine $Z_F$s.
+An ultimate goal for electron momentum density measurements over their long history is to directly observe the momentum distribution of quasi particles in metals and determine the renormalization factor ${\color{violet}Z_{k_F}}$.
+We have measured the momentum distribution in liquid and solid lithium by high-resolution Compton scattering so as to determine ${\color{violet}Z_{k_F}}$s.
 High-resolution data over a wide momentum range exhibits a clear feature of the renormalization and a sharp drop of momentum densities at Fermi momentum $k_F$.
-They are compared with those by Quantum Monte Carlo simulation performed on a disordered crystal or glass, exhibiting a very good agreement.        
+They are compared with those by ${\color{violet}Z_{k_F}}$ Monte Carlo simulation performed on a disordered crystal or glass, exhibiting very good agreement.        
 Theoretical momentum distribution displays asymptotic behaviors as $(k/k_F)^4$ and $(k/k_F)^{-4}$ below and above $k_F$, respectively.
 On the other hand, the experiment shows slightly smaller exponents. 
-The experimentally and theoretically determined $Z_F$’s indicate a fairly good agreement with each other.
+The experimentally and theoretically determined ${\color{violet}Z_{k_F}}$’s indicate a fairly good agreement with each other.
 
 
 \end{abstract}
@@ -121,14 +122,14 @@ The experimentally and theoretically determined $Z_F$’s indicate a fairly good
 
 
 
-A behavior of correlated electrons is a general problem in condensed matter physics.
-The non-interacting homogeneous electron gas (HEG) has an occupation number of 1 or 0 per spin and the boundary defines Fermi surface. 
-The interacting HEG has the occupation of decimal numbers because some portions of the densities are scattered out of the Fermi surfaces due to the electron correlation, and thus the discontinuity of the occupation number is reduced but still partly survives on Fermi surfaces: This is a typical momentum distribution of quasi particles in metals and the remaining gap represents the renormalization factor $Z_F$. 
+The behavior of correlated electrons is a general problem in condensed matter physics.
+The non-interacting homogeneous electron gas (HEG) has an occupation number of 1 or 0 per spin and the boundary defines the Fermi surface. 
+The interacting HEG has the occupation of decimal numbers because some portions of the densities are scattered out of the Fermi surfaces due to the electron correlation. Thus, the discontinuity of the occupation number is reduced but still partly survives on Fermi surfaces. This is a typical momentum distribution of quasi particles in metals and the remaining discontinuity represents the renormalization factor ${\color{violet}Z_{k_F}}$. 
 This is a general concept comprising even strongly correlated electron systems such as heavy fermions.         
-Nonetheless it is virtually no opportunity to directly see such a momentum distribution in experiments.
+Nonetheless, there is virtually no opportunity to directly see such a momentum distribution in experiments.
 
 An energy spectrum of Compton scattered photons provides information of electron momentum densities (EMDs) in a sample\cite{sch}.
-Under the impulse approximation (IA)\cite{eisen70,kaplan03}, the differential scattering cross-section is proportional to a Compton profile (CP), which is defined as
+Under the impulse approximation (IA)\cite{eisen70,kaplan03}, the differential scattering cross-section is proportional to the Compton profile (CP), which is defined as
 \begin{equation}
 \frac{d^2\sigma}{d\Omega dE} \,\propto \, J(p_z) = \int \!\! \int n(k_x,k_y,k_z\!=\!p_z) \;dk_x dk_y .
 \end{equation}
@@ -138,17 +139,17 @@ For an isotropic sample, $n(\!\!\bb{k})$ can be obtained from the derivative of 
 \begin{equation}
 n(k) = - \frac{1}{2 \pi p} \frac{d J(p)}{d p}  | _{p=k}   .
 \end{equation}
-Note that $n(k)$ tends to diverge as $k$ $\to$ 0, often limiting a field of view.  
-The advantage of Compton scattering is that a sum rule is available so that CP can be normalized by electron numbers in an atom or a certain unit, facilitating quantitative comparisons with theory and experiment in an absolute scale.
-Though the observation of $n(k)$ and $Z_F$ is quite straightforward in principle, the report of the direct observation is extremely rare because the resolution of the experiments are not enough for many cases.
+Note that $n(k)$ {\color{violet}obtained in this way}  tends to diverge as $k$ $\to$ 0, often limiting the field of view.  
+The advantage of Compton scattering is that a sum rule is available so that CP can be normalized by electron numbers in an atom or a certain unit, facilitating quantitative comparisons with theory and experiment on an absolute scale.
+Though the observation of $n(k)$ and ${\color{violet}Z_{k_F}}$ is quite straightforward in principle, reports of direct observation are extremely rare because the resolution of the experiments is not {\color{violet}high} enough in many cases.
 To our knowledge, a report on Na a decade ago is the only successful example\cite{simo10}.
-Even in this case, $n(p)$ is only shown in a limited region near $k_F$, prohibiting to review an overall shape of $n(p)$.
+Even in this case, $n(p)$ is only shown in a limited region near $k_F$, prohibiting a review the overall shape of $n(p)$.
 
 
 \begin{figure}
 \includegraphics[bb= 30 50 500 600, width=7.5cm]{fig1.pdf}
 \caption{(a) CPs for liquid Li: Inset shows geometry of the experiment. (b) Elastic line, monitoring the instrumental resolution, 
-(c) Spectral density function, indicating the final state broadening, (d) The convolution of \small{(b)} and (c), providing the broadening function for a comparison with theory. O is the optimally fitted function while G and L means Gaussian and Lorentzian, respectively.  
+(c) Spectral density function, indicating the final-state broadening, (d) The convolution of \small{(b)} and (c), providing the broadening function for a comparison with theory. O is the optimally fitted function while G and L means Gaussian and Lorentzian, respectively.  
 } 
 \label{Fig.1}
 \end{figure}
@@ -156,26 +157,26 @@ Even in this case, $n(p)$ is only shown in a limited region near $k_F$, prohibit
 
 
 Na has free electrons showing isotropic nature and properties the closest to those of HEG among elementary metals.
-Similarly, Li has also been investigated as a case to which the HEG model is applicable.
+Similarly, Li has also been investigated as a case in which the HEG model is applicable.
 However, there is an unsolved puzzle standing for several decades for Li. 
-Interacting HEG models generally predicate $Z_F$ of 0.6-0.7 for r$_s$=3.25 (Li).
+Interacting HEG models generally predicate ${\color{violet}Z_{k_F}}$ of 0.6-0.7 for r$_s$=3.25 (Li).
 The first experimental determination performed by Sch{\"u}lke \ii{et al.}\,provided 0.1$\pm$0.1 (along [100] axis) based on a model analysis on $n(p)$ obtained \ii{via} a reconstruction on a single crystal\cite{schulke96}. 
-In fact, there was a common tendency upon comparisons between theories and experiments in past decades (is still true at present) that theory generally predicted higher CPs in $p<p_F$ while lower in $p>p_F$\cite{saku95}. 
-Kubo ascribed this to the electron correlation effects, showing that his GW calculation displayed a good agreement with experiments and indicating the substantially reduced $Z_F$ varying in 0.15-0.35 along several crystallographic axes\cite{kubo95,kubo97}.
-Filippi and Ceperley elucidated CPs with a correlation effect properly treated by quantum Monte Carlo (QMC) simulation, finally concluding that the correlation effect only partly accounted for the difference between theory and experiment, and claiming the necessity of other reasons\cite{filippi99}.  
-The disorder effect\cite{dugdale98} and the temperature effect on Li\cite{stern01} were discussed but they were not conclusive, leaving the puzzle unsolved.
-Recently Klevak \ii{et al.}\,calculated EMD by real-space multiple-scattering Green-function approach and displayed a smooth drop of $n(k)$ at $k_F$ with an indiscernible $Z_F$ due to the disorder effect, rather resembling the curves by Kubo\cite{klevak16}.  
+In fact, there was a common tendency upon comparisons between theories and experiments in past decades (still true at present) that theory generally predicted higher CPs in $p<p_F$ while lower in $p>p_F$\cite{saku95}. 
+Kubo ascribed this to the electron correlation effects, showing that his GW calculation displayed a good agreement with experiments and indicating the substantially reduced ${\color{violet}Z_{k_F}}$ varying in 0.15-0.35 along several crystallographic axes\cite{kubo95,kubo97}.
+Filippi and Ceperley elucidated CPs with {\color{violet}electron} correlation effect properly treated by ${\color{violet}Z_{k_F}}$ Monte Carlo (QMC) simulation, finally concluding that the correlation effect only partly accounted for the difference between theory and experiment, and claiming the necessity of other reasons\cite{filippi99}.  
+Disorder effect\cite{dugdale98} and temperature effect on Li\cite{stern01} were discussed but they were not conclusive, leaving the puzzle unsolved.
+Recently Klevak \ii{et al.}\,calculated EMD by real-space multiple-scattering Green-function approach and displayed a smooth drop of $n(k)$ at $k_F$ with an indiscernible ${\color{violet}Z_{k_F}}$ due to the disorder effect, rather resembling the curves by Kubo\cite{klevak16}.  
 The source of the puzzle is that the conduction electrons in Li have a strong orbital hybridization with core electrons, leading to a large electron-lattice interaction.
 This renders Fermi surface anisotropic and generates secondary Fermi surfaces in higher Brillouin zones due to Umklapp process.
 They make quantitative comparisons between theory and experiment cumbersome. 
 
-In this study, we have attempted a quantitative determination of $Z_F$ in Li by ultra-high resolution Compton scattering, where a 0.016 atomic unit (a.u.) instrumental resolution and a 0.024 a.u.\;overall resolution were achieved.
+In this study, we have attempted a quantitative determination of ${\color{violet}Z_{k_F}}$ in Li by ultra-high resolution Compton scattering, where a 0.016 atomic unit (a.u.) instrumental resolution and a 0.024 a.u.\;overall resolution were achieved.
 Solid Li has an anisotropic Fermi surface, posting the necessity of the EMD reconstruction for the exact evaluation. 
 However, the reconstruction generally produces artifacts during complicated computing, making a quantitative analysis difficult.
 We have measured liquid Li above the melting point.
 The liquid sample can be considered perfectly isotropic, allowing us a straightforward derivation of $n(k)$ with minimized artifacts.
 As a reference, we also measured a polycrystalline sample before melting the sample.
-The both samples exhibit a clear break of $n(k)$ at $k_F$ and features of the renormalization, nicely showcasing the behaviors of the interacting HEG\cite{holz11}.
+Both samples exhibit a clear break of $n(k)$ at $k_F$ and features of the renormalization, nicely showcasing the behaviors of the interacting HEG\cite{holz11}.
 
 \begin{figure}
 \includegraphics[bb= 50 10 500 720, width=7.5cm]{fig2.pdf}
@@ -185,14 +186,14 @@ The both samples exhibit a clear break of $n(k)$ at $k_F$ and features of the re
 \end{figure}
 
 The experiment was performed at Taiwan IXS beamline at SPring-8 (BL12XU).
-The most critical parameter to determine $Z_F$ is the momentum resolution. 
-A typical radius of a Fermi sphere is 0.5 - 1.0\,a.u. This fact requires a resolution of an order of 0.01\,a.u.\,to reveal $Z_F$, which is a technically challenge.
-One can easily improve the instrumental resolution if low energy photons are used but a spectrum is substantially broadened by the final state effect\cite{stern00,soi01}.
-We have chosen for $E_o$=25.5 keV to obtain $dE$=5 eV (instrumental), corresponding to $dp$=0.016 a.u.
+The most critical parameter to determine ${\color{violet}Z_{k_F}}$ is the momentum resolution. 
+A typical radius of a Fermi sphere is 0.5 - 1.0\,a.u. This fact requires a resolution of an order of 0.01\,a.u.\,to reveal ${\color{violet}Z_{k_F}}$, which is a technical challenge.
+One can easily improve the instrumental resolution if low energy photons are used but the spectrum is substantially broadened by final-state effect\cite{stern00,soi01}.
+We have chosen $E_o$=25.5 keV to obtain $dE$=5 eV (instrumental), corresponding to $dp$=0.016 a.u.
 The details of the spectrometer are described in [\onlinecite{hira13}]. 
 
 
-A polycrystalline Li sample having a cylindrical shape of a 9-mm diameter and a 10-mm height was placed in the furnace made of stainless steel (SUS) equipped with a heater at the bottom (Fig.1a inset).
+A polycrystalline Li sample having a cylindrical shape of 9-mm diameter and 10-mm height was placed in the furnace made of stainless steel (SUS) equipped with a heater at the bottom (Fig.1a inset).
 The experiment was first performed at 297 K on solid Li and then at 493 K on liquid Li. 
 The furnace had openings along the directions of incident photons and scattered photons (see, Fig.1a, inset).
 The Li cylinder was rolled by a 10-$\mu$m thick SUS foil in a glovebox before setting, to avoid the sample spilling out of the furnace when Li was melt.
@@ -202,7 +203,7 @@ The obtained CPs were corrected for the self-absorption, background, multiple sc
 
 \vspace{10mm}
 
-Quantum Monte Carlo calculations were performed on molecular dynamics (MD) configurations sampled at 330K and 500K for the solid and the liquid phases, respectively. The classical MD temperatures were elevated to roughly account for the quantum fluctuations of the nuclei~\cite{filippi98}. We used Slater-Jastrow wavefunction with LDA orbitals on simulation cells containing 432 lithium atoms. Finite-size error of spherically average momentum distribution was corrected following~\cite{holz09}. Pseudopotential error was corrected using an all-electron calculation performed on the perfect crystal. All calculations were performed at the same density $r_s=3.25$. We rescaled the momentum distributions to experimental densities ($r_s=3.265$ for the solid and $r_s=3.31$ for the liquid) in post-processing. Fermi momenta of the MD configurations were determined by unfolding the LDA bands from 432-atom supercell to the primitive cell Brillouin zone. The unfolding has been performed using the BandUP code~\cite{Medeiros2014,Medeiros2015}.  We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
+${\color{violet}Z_{k_F}}$ Monte Carlo calculations were performed on molecular dynamics (MD) configurations sampled at 330K and 500K for the solid and the liquid phases, respectively. The classical MD temperatures were elevated to roughly account for ${\color{violet}Z_{k_F}}$ fluctuations of the nuclei~\cite{filippi98}. We used Slater-Jastrow wavefunction with LDA orbitals on simulation cells containing 432 lithium atoms. Finite-size error of spherically average momentum distribution was corrected following~\cite{holz09}. Pseudopotential error was corrected using an all-electron calculation performed on the perfect crystal. All calculations were performed at the same density $r_s=3.25$. We rescaled the momentum distributions to experimental densities ($r_s=3.265$ for the solid and $r_s=3.31$ for the liquid) in post-processing. Fermi momenta of the MD configurations were determined by unfolding the LDA bands from 432-atom supercell to the primitive cell Brillouin zone. The unfolding has been performed using the BandUP code~\cite{Medeiros2014,Medeiros2015}.  We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
 More computational details will be described elsewhere.
 
 \vspace{10mm}
@@ -213,7 +214,7 @@ More computational details will be described elsewhere.
 
 \begin{table}[b]
 \begin{tabular}{llllllll}
-\multicolumn{2}{l} {Averaging}   &      & $~n^+~~~$   & $~~n^-~~~$    & $~\zeta_F~~~$   & ~$n_o$~~~ & $Z_F$~   \\ \hline
+\multicolumn{2}{l} {Averaging}   &      & $~n^+~~~$   & $~~n^-~~~$    & $~{\color{violet}\zeta_{k_F}}~~~$   & ~$n_o$~~~ & ${\color{violet}Z_{k_F}}$~   \\ \hline
  %            &    k range     & [au] &\footnotesize{0.50-0.55} & \footnotesize{0.63-0.68} &   &   &   \\ \hline
               & Theo. &\footnotesize{I}  & 0.80 & 0.046 & 0.76 & 0.89 & 0.82 \\ 
 Liquid    &      &\footnotesize{II} & 0.77 & 0.052 & 0.71 & 0.89 & 0.78 \\
@@ -236,8 +237,8 @@ Solid      &      &\footnotesize{II} & 0.76 & 0.074 & 0.69 & 0.89 & 0.75 \\
               & Exp.  &      & 0.72 & 0.144 & 0.57 & 0.85 & 0.65 \\ \hline
 
 \end{tabular}
-\caption{
-$Z_F$ and related parameters: ''Averaging'' means numbers obtained from $n(k)$ averaged around $k_F+\delta k$ or $k_F-\delta k$, where $\delta k$ is set 0.03 a.u.$\,$within a window of $\pm$0.025 a.u.
+\caption{ \label{tab:zkf}
+${\color{violet}Z_{k_F}}$ and related parameters: ''Averaging'' means numbers obtained from $n(k)$ averaged around $k_F+\delta k$ or $k_F-\delta k$, where $\delta k$ is set 0.03 a.u.$\,$within a window of $\pm$0.025 a.u.
 ''Extrapolation'' means the numbers at $k \to k_F$ by linear fit in log-log scales.
 Theory I.\, means from original QMC outputs, II.\,from those with the convolution, and III.\,from those with convolution by Lorentzian having long tails.
 $n_o^{\nn{HEG}}$ = 0.97 is used.
@@ -253,10 +254,11 @@ $n_o^{\nn{HEG}}$ = 0.97 is used.
 \end{figure}
 
 
-Finally, theoretical CPs were convoluted by the broadening function due to the instrumental resolution and the final state effect. 
+Finally, theoretical CPs were convoluted by the broadening function due to the instrumental resolution and the final-state effect. 
 The former was monitored by a line profile of the elastic scattering (Fig.1b), which had a width of 0.016 a.u.
 For the latter, we calculated a spectral density function (SDF) for HEG based on Soininnen's form\cite{soi01}, which had a width of $\sim$ 0.013 a.u.\,(Fig.1c).
-The broadening function given by a sum of those functions showed a shape between Gaussian and Lorentzian.    
+%The broadening function given by a sum of those functions showed a shape between Gaussian and Lorentzian.    
+The broadening function given by a {\color{red}convolution} of those functions showed a shape between Gaussian and Lorentzian.
 We fit this profile with an function $b(p) =1/ [ \Sigma_{n=0}^{n<3}\,a_n\,(2p / \Gamma )^{2n} ]$ and obtained ($a_0$, $a_1$, $a_2$) =(1.0, 0.85, 0.15) with $\Gamma$ = 0.024\,a.u.\,(Fig.1d).
 Note this function becomes Lorentzian when (1, 1, 0) while nearly Gaussian when (0.6, 0.3, 0.1) as Taylor series. 
 
@@ -273,18 +275,20 @@ Nonetheless, those behaviors are quite consistent to what are expected across th
 A sharp drop at $k_F$ could remain even after the spherical averaging, as indeed examined on EMDs by band theory based on the local density approximation, (see, Inset in Fig.2d). 
 
 
-First, we determine $Z_F$ as in the earlier report on Na\cite{simo10}, in which $Z_F$ is determined by the difference between $dJ/dp$ at $p\,$s slightly smaller and larger than $p_F$. 
+First, we determine ${\color{violet}Z_{k_F}}$ as in the earlier report on Na\cite{simo10}, in which ${\color{violet}Z_{k_F}}$ is determined by the difference between $dJ/dp$ at $p\,$s slightly smaller and larger than $p_F$. 
 This is equivalent to evaluating the difference between $n(k)$ at $k\,$s slightly smaller and larger than $k_F$.
-Once one has $n^+$ and $n^-$ by averaging $n(k)$\,s among several points near $k_F-\delta k$ and  $k_F+\delta k$, respectively, the difference $\zeta_F$ = $n^+ - n^-$ provides the gap. 
-Note this is a renormalization factor that is reduced due to electron-lattice interaction. 
-The true $Z_F$ is obtained from $\zeta_F$$(n_o\,^{\nn{HEG}}/n_o) $.\footnote{this ratio is double-checked by LDA band-theory, where $n_o$=0.91 for bcc Li while it should be 1 without crystal potential.}  
-Here, $n_o$ is experimental and theoretical $n(k)$ at $k \to 0$ obtained by an extrapolation while $n_o^{\nn{HEG}}$ that in HEG (=0.97). 
-The obtained $Z_F\,$s are summarized in TABLE.
+Once one has $n^+$ and $n^-$ by averaging $n(k)$\,s among several points near $k_F-\delta k$ and  $k_F+\delta k$, respectively, the difference ${\color{violet}\zeta_{k_F}}$ = $n^+ - n^-$ provides the gap. 
+Note that this is a renormalization factor that is reduced due to electron-lattice interaction. 
+%The true ${\color{violet}Z_{k_F}}$ is obtained from ${\color{violet}\zeta_{k_F}}$$(n_o\,^{\nn{HEG}}/n_o) $.\footnote{this ratio is double-checked by LDA band-theory, where $n_o$=0.91 for bcc Li while it should be 1 without crystal potential.}  
+${\color{violet}\zeta_{k_F}}{\color{red}(n_{k_F}^{\nn{FFG}}/n_{k_F}^{\nn{DFT}})}$.\footnote{this ratio is double-checked by LDA band-theory, where {\color{red}$n_{k_F}$=0.83} for bcc Li while it should be 1 without crystal potential.}
+%Here, $n_o$ is experimental and theoretical $n(k)$ at $k \to 0$ obtained by an extrapolation while $n_o^{\nn{HEG}}$ that in HEG (=0.97). 
+Here, $n_{k_F}^{\nn{FFG}}=1$ is the free Fermi gas (FFG) momentum distribution just inside the Fermi surface, while $n_{k_F}^{\nn{DFT}}$ is the DFT value, which accounts for electron-lattice interaction. 
+The obtained ${\color{violet}Z_{k_F}}\,$s are summarized in the ``Averaging'' section of TABLE~\ref{tab:zkf}.
 
 
 
-The advantage of the analysis above is independent of the model but it obviously tends to overestimate $Z_F$s as the densities are read away from $k_F$.
-According to the definition, $Z_F$ needs to be determined at the limit of $k$ $\to$ $k_F$. 
+The advantage of the analysis above is {\color{violet}that it is} independent of the model but it obviously tends to overestimate ${\color{violet}Z_{k_F}}$s as the densities are read away from $k_F$.
+According to the definition, ${\color{violet}Z_{k_F}}$ needs to be determined at the limit of $k$ $\to$ $k_F$. 
 Sch{\"u}lke \ii{et al.}\,\,constructed a model where $n(k)$ decreases as $-(k/k_F)^{8}$ or $(k/k_F)^{-8}$ with increasing $k$\cite{schulke96}.
 Based on their model, we first tried to plot $n(k)$ $vs$ $(k/k_F)^{\pm 8}$ but did not find a good linearity (not shown).
 This fact encourages us to carefully investigate the asymptotic behaviors upon a more general model as follows: 
@@ -303,11 +307,11 @@ The experiments, on the other hand, shows $\beta^+$$\sim\,$3 and $\beta^-$$\sim\
 The non-negligible difference between theory and experiment may be due to Umklapp features that appear more prominent in theory.
 It is noted that, if the average was taken for the absolutes $| \beta^+ |$ and $| \beta^- |$, it would be 4$\sim$5, which agrees with theory.
 This exponent may be a characteristic parameter describing behaviors in a practical $k$ range.
-Now we determine $Z_F$s. 
+Now we determine ${\color{violet}Z_{k_F}}$s. 
 The extrapolated densities $\alpha^+$ and $\alpha^-$ give $n_o - n^+$ and $n^-$, respectively.
-As mentioned already,  and $Z_F$ is given by $\zeta_F\,(n_o\,^{\nn{HEG}}/n_o) $, where $\zeta_F$= $n^+$ - $n^-$.   
-Table-I summarizes the $Z_F$s. 
-The theory originally provides $Z_F$ = 0.76 for liquid and 0.78 solid  (see, Theory-I in TABLE-I) .
+As mentioned already,  and ${\color{violet}Z_{k_F}}$ is given by ${\color{violet}\zeta_{k_F}}{\color{red}(n_{k_F}^{\nn{FFG}}/n_{k_F}^{\nn{DFT}})}$, where ${\color{violet}\zeta_{k_F}}= n^+ - n^-$.   
+TABLE~\ref{tab:zkf} summarizes the ${\color{violet}Z_{k_F}}$s. 
+The theory originally provides $Z_F$ = 0.76 for liquid and 0.78 solid  (see, Theory-I in TABLE~\ref{tab:zkf}) .
 They are diminished to 0.74 and 0.76 after the convolution by $b(p)$ (Theory-II), meaning the experimentally observed $Z_F$ requires the correction for this, which amounts to 2.8 \%.
 The experimental $Z_F\,$s are 0.62 (L) and 0.65 (S). After the corrections, we have $Z_F\,$s = 0.64 (L) and 0.67 (S) at the end.    
 
@@ -332,7 +336,8 @@ They can be considered as the upper limits.
 The lower limits would be estimated when $\delta$-function used as SDF. This correction is much smaller, only 2\% at most (not shown).
 We then have 0.63(L) and 0.66(S) after the corrections as the lowest limit.    
 
-In summary,  the experimental $Z_F$s with errors are 0.64$^{\nn{+0.11}}_{\nn{\;-0.01}}$ for liquid Li and 0.67$^{\nn{+0.12}}_{\nn{\;-0.01}}$ for solid, while theoretical ones by QMC are 0.76 (L) and 0.78 (S).
+In summary,  the experimental $Z_F$s with errors are 0.64$^{\nn{+0.11}}_{\nn{\;-0.01}}$ for liquid Li and 0.67$^{\nn{+0.12}}_{\nn{\;-0.01}}$ for solid, %while theoretical ones by QMC are 0.76 (L) and 0.78 (S).
+wile theoretical ones by QMC are {\color{red}0.59$\pm0.01$(L) and 0.69$\pm0.01$(S)}.
 They agree with each other, much reasonably compared to the earlier reports having posted many disputes.      
 
 
