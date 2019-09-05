@@ -137,15 +137,15 @@ The Compton profile reported by Filippi and Ceperley \cite{Filippi1999} is close
 %their reported QMC Compton profile effectively includes an LDA pseudopotential correction. Specifically, full-core LDA + QMC correlation correction = pseudopotential QMC + LDA pseudopotential correction.
 
 \begin{figure}
-\includegraphics[scale=0.48]{figures/li58f_crystal-jp}
+\includegraphics[width=\linewidth]{figures/li58f_crystal-jp}
 \caption{Spherical average of the valence Compton profile of lithium BCC crystal at $r_s=3.25$. The red solid line is the best QMC result with all processing steps applied. The red dotted curve is our pseudopotential QMC result. The black curve is experiment on polycrystal lithium. \label{fig:crystal-vcp}}
 \end{figure}
 
 Taking our best QMC Compton profiles (colored line in Fig.~\ref{fig:sl-jp-djp}) as reference, we show the remaining difference between the QMC and the experiment Compton profiles as the black curves in Fig.~\ref{fig:sl-corrections}. We also show the effect of each processing step in the calculation of $J(p)$. %As shown in Fig.~\ref{fig:crystal-ppc}, three corrections are considered: pseudopotential, finite-size, and convolution. All three lower the value of $J(0)$, bringing it closer to experiment. The pseudopotential correction is dominant over the convolution and finite-size corrections. Further, the pseudopotential correction is the only one that contributes at momenta far above the Fermi momentum ($p>0.75$ a.u.).
 
 \begin{figure}
-\includegraphics[scale=0.48]{figures/li58_solid-the-djp}
-\includegraphics[scale=0.48]{figures/li58_liquid-the-djp}
+\includegraphics[width=\linewidth]{figures/li58_solid-the-djp}
+\includegraphics[width=\linewidth]{figures/li58_liquid-the-djp}
 \caption{Compton profile corrections at the scale of expt.-theory difference. The solid black curve is experiment relative to ``best'' theory. The dotted black curve is experiment relative to pseudopotential QMC result with no correction. The colored curves are various corrections to the theoretical Compton profile. \label{fig:sl-corrections}}
 \end{figure}
 
@@ -158,7 +158,7 @@ In the following, we discuss possible explanations for the remaining discrepancy
 The qualitative effect of the pseudopotential is clear from its construction. When designing a pseudopotential, one smooths the valence orbital inside the core region. This will decrease the electronic momentum density at high momenta (thus increase it at low momenta to preserve normalization). Indeed, one can reproduce the pseudopotential correction semi-quantitatively by considering the smoothing of the pseudized valence orbital in the lithium atom (Fig.~\ref{fig:hf-ppc}). We see that augmented planewave (APW) calculations~\cite{Baruah1999,Bross2004,Bross2005,Bross2012} tend to reproduce the experimental Compton profiles better at low momenta than pseudopotential calculations.
 
 \begin{figure}
-\includegraphics[scale=0.48]{figures/li42c_bfd-dmcppc}
+\includegraphics[width=\linewidth]{figures/li42c_bfd-dmcppc}
 \caption{Pseudopotential correction derived from QMC and HF. The green curve is the same QMC pseudopotential correction as shown in Fig.~\ref{fig:sl-corrections}. The dashed blue curve is the pseudopotential correction derived from the all-electron v.s. pseudized lithium atom using HF. The gray vertical line marks the Fermi momentum. The black horizontal line marks zero.\label{fig:hf-ppc}}
 \end{figure}
 
