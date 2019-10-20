@@ -29,6 +29,10 @@
 \newcommand{\aii}{\nn{\!\!I\!I}} 
 \newcommand{\aiii}{\nn{\!\!I\!I\!I}} 
 
+\newcommand{\yy}[1]{\textcolor{olive}{\textbf{YY: #1}}}
+\newcommand{\dc}[1]{\textcolor{red}{\textbf{DC: #1}}}
+\newcommand{\mh}[1]{\textcolor{blue}{\textbf{MH: #1}}}
+
 \begin{document}
 %\preprint{et al.}
 
@@ -160,9 +164,9 @@ This renders Fermi surface anisotropic and generates secondary Fermi surfaces in
 This makes quantitative comparisons between theory and experiment difficult. 
 
 In this study, we estimate $Z_{k_F}$ in Li using ultra-high resolution Compton scattering. A 0.016 atomic unit (a.u.) instrumental resolution and a 0.024 a.u.\;overall resolution were achieved.
-Because solid Li has an anisotropic Fermi surface, a tomographic reconstruction of the EMD is required. However, this reconstruction produces artifacts, making a quantitative analysis difficult.
+A tomographic reconstruction of the EMD is required for solid Li because it an anisotropic Fermi surface. However, this reconstruction produces artifacts, making a quantitative analysis difficult.
 To avoid this procedure, we measured Li above the melting point.
-The liquid sample is isotropic, allowing us a straightforward derivation of $n(k)$ from Eq. (2).
+The liquid sample is isotropic, allowing a straightforward derivation of $n(k)$ from Eq. (2).
 As a reference, we also measured a polycrystalline sample before melting the sample.
 Both samples exhibit a clear break of $n(k)$ at $k_F$ allowing determination of the renormalization and the generic behavior of the momentum distribution of the HEG~\cite{holz11}.
 
@@ -182,11 +186,11 @@ The details of the spectrometer are described in [\onlinecite{hira13}].
 A polycrystalline Li sample having a cylindrical shape of 9-mm diameter and 10-mm height was placed in the furnace made of stainless steel (SUS) equipped with a heater at the bottom. See the inset in Fig.1a inset.
 The experiment was first performed at 297 K on solid Li and then at 493 K on liquid Li.
 The furnace had openings along the directions of the incident and the scattered photons (see, Fig.1a, inset).
-The Li cylinder was rolled by a 10-$\mu$m thick SUS foil in a glovebox before setting (???), to avoid the sample spilling out of the furnace when melted.
+The Li cylinder was rolled by a 10-$\mu$m thick SUS foil in a glovebox before setting \dc{???}, to avoid the sample spilling out of the furnace when melted.
 As seen in the figure, the scattered photons from the foil were blocked by the thick part of the furnace so that they were not detected.
 The obtained CPs were corrected for the self-absorption, background, multiple scattering, and the energy dependence of the detection system (Fig.1a).
 
-Quantum Monte Carlo calculations were performed on molecular dynamics (MD) configurations of the ions sampled at 330K and 500K for the solid and the liquid phases, respectively. The classical MD temperatures were elevated (BY HOW MUCH??) to account for quantum fluctuations of the nuclei by matching kinetic energy following ref.~\cite{filippi98}. We used Slater-Jastrow wavefunction with LDA orbitals on simulation cells containing 432 lithium atoms. The finite-size error of the momentum distribution was corrected using the leading-order correction from Ref.~\cite{holz09}. The pseudopotential error was corrected using an all-electron calculation for the perfect crystal. All calculations were performed at $r_s=3.25$. After the QMC calculation, we rescaled $k$ and $n(k)$ to the $k_F$s corresponding to the actual experimental densities ($r_s=3.265$ for the solid and $r_s=3.31$ for the liquid). We used LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the Nexus suite of tools~\cite{Krogel2016}.
+Quantum Monte Carlo calculations were performed on molecular dynamics (MD) configurations of the ions sampled at 330K and 500K for the solid and the liquid phases, respectively. The classical MD temperatures were elevated by 33K in the solid and 7K in the liquid phase to account for quantum fluctuations of the nuclei by matching kinetic energy following ref.~\cite{filippi98}. We used Slater-Jastrow wavefunction with LDA orbitals on simulation cells containing 432 lithium atoms. The finite-size error of the momentum distribution was corrected using the leading-order correction from Ref.~\cite{holz09}. The pseudopotential error was corrected using an all-electron calculation for the perfect crystal. All calculations were performed at $r_s=3.25$. After the QMC calculation, we rescaled $k$ and $n(k)$ to the $k_F$s corresponding to the actual experimental densities ($r_s=3.265$ for the solid and $r_s=3.31$ for the liquid). We used LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the Nexus suite of tools~\cite{Krogel2016}.
 More computational details will be described elsewhere [cite theory paper].
 
 \begin{table}[b]
@@ -253,29 +257,28 @@ The broadening function given by a convolution of those functions showed a shape
 We fit this profile with an function $b(p) =1/ [ \Sigma_{n=0}^{2}\,a_n\,(2p / \Gamma )^{2n} ]$ and obtained ($a_0$, $a_1$, $a_2$) =(1.0, 0.85, 0.15) with $\Gamma$ = 0.024\,a.u.\,(Fig.1d).
 Note this function becomes Lorentzian using the parameters (1, 1, 0) while effectively Gaussian using the parameters (0.6, 0.3, 0.1).
 
-Figure 2a compares the experimental (valence) CPs, $J(p)$ to theory (convoluted) while Fig.2b the experimental EMDs $n(k)$s to theory with and without convolutions.
-As a reference, a WHAT??? convoluted by Lorentzian having longer tails is also shown.
+Figure 2a compares the experimental (valence) CPs, $J(p)$ to theory (convoluted) while Fig.2b the experimental $n(k)$s to theory with and without convolutions.
+As a reference, another $n(k)$ convoluted by Lorentzian having longer tails is also shown.
 We first computed  $J(p)$ with Eq.(1), then convoluted, and then transformed back to $n(k)$ with Eq. (2).
-EMDs of the liquid and solid Li are similar and clear features of the momentum distribution renormalization can be seen.
+$n(k)$s of the liquid and solid Li are similar and clear features of the momentum distribution renormalization can be seen.
 Theory seems to match the experiment better with the Lorentzian-type broadening function, especially the height of $n(k)$ and the curvature near $k_F$, perhaps implying that SDF could have a larger tail than expected.
 This possibility will be discussed later.
-Liquid Li has a slightly lower density, and thus a smaller $k_F$, making $J(p)$ higher for $k < k_F$.
+Liquid Li has a slightly lower density, thus a smaller $k_F$, making $J(p)$ higher for $k < k_F$.
 Furthermore, $n(k)$ in the liquid shows slightly a smaller drop at $ k_F $  possibly because of more disorder effect and  larger electron correlation effect in the expanded system.
 As mentioned above, solid Li has an anisotropic Fermi surface; its radius varies by several percent~\cite{saku95,schulke96}. Hence a simple comparison is problematic.
 Nonetheless, the comparison across the melting point is consistent with expectations, indicating the solid sample consists of randomly oriented domains.
-A sharp drop at $k_F$ persists even after the spherical averaging, as we verified with band theory  calculations based on the local density approximation, (see, Inset in Fig.2d).
+A sharp drop at $k_F$ persists even after the spherical averaging, as we verified with band theory  calculations based on the local density approximation (LDA) (see, Inset in Fig.2d).
 
 In order to determine $Z_{k_F}$ we follow the procedure in earlier study of Na~\cite{simo10}: $Z_{k_F}$ is determined by the difference between $dJ/dp$ at $p\,$s slightly smaller and larger than $p_F$.
 This is equivalent to evaluating the difference between $n(k)$ at $k\,$s slightly smaller and larger than $k_F$.
 Once one has $n^+$ and $n^-$ by averaging $n(k)$\,s among several points near $k_F-\delta k$ and  $k_F+\delta k$, respectively, the difference $\zeta_{k_F}$ = $n^- - n^+$ provides the gap.
-Note that this renormalization factor that is reduced due to electron-lattice interaction and thus
+Note that this renormalization factor that is reduced due to electron-lattice interaction, thus
 %The true ${\color{black}Z_{k_F}}$ is obtained from ${\color{black}\zeta_{k_F}}$$(n_o\,^{\nn{HEG}}/n_o) $.\footnote{this ratio is double-checked by LDA band-theory, where $n_o$=0.91 for bcc Li while it should be 1 without crystal potential.}  
-$Z_{k_F}$ is given by $\zeta_{k_F} (n_{k_F}^{\nn{FFG}}/n_{k_F}^{\nn{DFT}})$~\footnote{this ratio is double-checked by LDA band-theory, where $n_{k_F}$=0.83 for bcc Li.}.
-%Here, $n_o$ is experimental and theoretical $n(k)$ at $k \to 0$ obtained by an extrapolation while $n_o^{\nn{HEG}}$ that in HEG (=0.97). 
-Here, $n_{k_F}^{\nn{FFG}}=1$ is the free Fermi gas (FFG) momentum distribution just inside the Fermi surface, while $n_{k_F}^{\nn{DFT}}$ is the DFT value ($\approx$0.83), which accounts for electron-lattice interaction. 
+$Z_{k_F}$ is given by $\zeta_{k_F}/n_{k_F}^{\nn{DFT}}$~\footnote{this ratio is double-checked by LDA band-theory, where $n_{k_F}$=0.83 for bcc Li.}.
+$n_{k_F}^{\nn{DFT}}$ is the DFT momentum distribution just inside the Fermi surface ($\approx$0.83), which accounts for electron-lattice interaction.
 The obtained $Z_{k_F}\,$s are summarized in the ``Averaging'' section of TABLE~\ref{tab:zkf}.
 
-The advantage of the above analysis is that it is independent of the model but it obviously tends to overestimate $Z_{k_F}$s as the momentum densities are determined away from $k_F$.
+The advantage of the above analysis is that it is independent of the model but it obviously tends to overestimate $Z_{k_F}$ as the momentum densities are determined away from $k_F$.
 According to the definition, $Z_{k_F}$ is defined in the limit of $k$ $\to$ $k_F$.
 Sch{\"u}lke \ii{et al.}\,\,constructed a model where $n(k)$ decreases as $-(k/k_F)^{8}$ or $(k/k_F)^{-8}$ with increasing $k$~\cite{schulke96}.
 Based on their model, we first tried to plot $n(k)$ $vs$ $(k/k_F)^{\pm 8}$ but we did not find a linear behavior.
@@ -292,7 +295,7 @@ Figure 3 shows the log-log plots for $n(k)$ vs $(k/k_F)$. %, on which linear fit
 We find that the theoretical $n(k)$ has  exponents $\beta$$\sim\pm$4, depending on the broadening functions.
 The HEG  would have $\beta$ = -8 at $k \gg k_F$, which is very different from the results for Li.
 The reasons for the difference is (i) that HEG can have a different behavior as $k$ approaches $k_F$ and (ii) that {\it Umklapp} process may significantly influence the asymptotic behavior.
-The experiments, on the other hand, shows $\beta^+$$\sim\,$3 and $\beta^-$$\sim\,$5.
+The experiments, on the other hand, shows $\beta^+$$\sim\,$3 and $\beta^-$$\sim\,$-5.
 The non-negligible difference between theory and experiment may be due to {\it Umklapp} features that appear more prominent in theory.
 %It is noted that, if the average was taken for the absolutes $| \beta^+ |$ and $| \beta^- |$, it would be 4$\sim$5, which agrees with theory.
 %This exponent may be a characteristic parameter describing behaviors in a practical $k$ range.
@@ -312,7 +315,11 @@ To account for the slope, we fit the QMC $n(k)$ to the RPA form Eq.~(\ref{eq:rpa
 \begin{equation} \label{eq:rpa-nk}
 \tilde{n}(x) = n_1 + A\vert 1-x\vert log\left(\vert 1-x\vert\right),
 \end{equation}
-where $x\equiv k/k_F$, $\tilde{n}\in[0,1]$. $n_1$ and $A$ are fitting parameters. The fitted $n_1$ corresponds to $n^-$ in the range $x\in(0.8, 0.97)$ and $n^+$ in the range $x\in(1.02, 1.2)$. Points too close to $k_F$ were excluded because spherical average of anisotropic $n(\boldsymbol{k})$ smears out the Fermi break. $k_F$ of the MD configurations were determined by unfolding the LDA bands from the 432-atom supercell to the primitive cell Brillouin zone using the BandUP code~\cite{Medeiros2014,Medeiros2015}. The $n(k)$ discontinuity $\zeta_{k_F}= \langle n^+-n^-\rangle$, where $\langle\rangle$ indicates average over MD configurations. Finally, $Z_{k_F} = \zeta_{k_F}/n_{k_F}^{\nn{LDA}}$, where $n_{k_F}^\nn{LDA}\approx0.83$. The QMC $\zeta_{k_F}$ obtained in this way are $0.53\pm0.01$ and $0.45\pm0.01$ for the solid and liquid, respectively. The $Z_{k_F}$s are $0.64\pm0.01$ and $0.54\pm0.01$.
+where $x\equiv k/k_F$, $\tilde{n}\in[0,1]$. $n_1$ and $A$ are fitting parameters. The fitted $n_1$ corresponds to $n^-$ in the range $x\in(0.8, 0.97)$ and $n^+$ in the range $x\in(1.02, 1.2)$. Points too close to $k_F$ were excluded because spherical average of anisotropic $n(\boldsymbol{k})$ smears out the Fermi break. $k_F$ of the MD configurations were determined by unfolding the LDA bands from the 432-atom supercell to the primitive cell Brillouin zone using the BandUP code~\cite{Medeiros2014,Medeiros2015}. $Z_{k_F} = \langle\zeta_{k_F}\rangle/n_{k_F}^{\nn{LDA}}$, where
+$\langle\rangle$ indicates average over MD configurations and
+$n_{k_F}^\nn{LDA}\approx0.83$. The QMC $Z_{k_F}$ obtained in this way are
+$0.64\pm0.01$ and $0.54\pm0.01$
+for the solid and liquid, respectively.
 
 The RPA form Eq.~(\ref{eq:rpa-nk}) cannot be directly fit to the experimental data because of resolution and final-state smearing effects at $k_F$.
 Therefore, we use theory to determine the slope near $k_F$ and attempt to correct the experimental $Z_{k_F}$ or $\zeta_{k_F}$ based on the theoretical slope.
