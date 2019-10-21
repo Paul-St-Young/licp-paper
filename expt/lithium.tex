@@ -107,7 +107,7 @@ We have measured the momentum distribution and renormalization factor $Z_{k_F}$ 
 High-resolution data over a wide momentum range exhibit a clear feature of the renormalization and a sharp drop of momentum densities at the Fermi momentum $k_F$.
 These results are compared with those computed by quantum Monte Carlo simulation performed both on a disordered crystal and a liquid exhibiting very good agreement.
 The theoretical momentum distributions display asymptotic behavior as $(k/k_F)^4$ and $(k/k_F)^{-4}$ below and above $k_F$, respectively.
-The experiment shows slightly different exponents.
+The experiment shows slightly smaller\yy{different} exponents.
 \yy{The experimentally determined $Z_{k_F}=  0.43^{\nn{+0.11}}_{\nn{\;-0.01}}$ for liquid Li and 0.54$^{\nn{+0.11}}_{\nn{\;-0.02}}$ for solid Li are in good agreement with theoretical results of $0.54\pm0.01$ and $0.64\pm0.01$, respectively.}
 \end{abstract}
 \pacs{78.70.Ck, 78.20.Ls}
@@ -208,27 +208,27 @@ More computational details will be described elsewhere [cite theory paper].
 %              & Exp.  &      & 0.69 & 0.131 & 0.56 & 0.67 \\ \hline
 %\\
 \multicolumn{2}{l} {Power fit}    &  & $~n^-_{\nn{pow}}$     & $~n^+_{\nn{pow}}$      &   $\zeta_{k_F}$   &  $Z_{k_F}$    \\ \hline
-              & Theo. &\footnotesize{I} & 0.74 & 0.091 & 0.65  & 0.78 \\ 
-Liquid    &      &\footnotesize{II}& 0.73 & 0.091 & 0.64 &  0.77 \\
-              &     &\footnotesize{III} & 0.67 & 0.120 & 0.55 &  0.66 \\ % \hline
+              & Theo. &\footnotesize{QMC} & 0.74 & 0.091 & 0.65  & 0.78 \\
+Liquid    &      &\footnotesize{QMC-C}& 0.73 & 0.091 & 0.64 &  0.77 \\
+              &     &\footnotesize{QMC-CL} & 0.67 & 0.120 & 0.55 &  0.66 \\ % \hline
               & Exp.  &      & 0.69 & 0.142 & 0.54 & 0.62 \\ \hline
-                  & Theo. &\footnotesize{I}  & 0.75 & 0.082 & 0.67 & 0.81 \\ 
-Solid      &      &\footnotesize{II} & 0.74 & 0.084 & 0.66 & 0.80 \\
-              &      &\footnotesize{III} & 0.68 & 0.113 & 0.57 & 0.68 \\ % \hline
+                  & Theo. &\footnotesize{QMC}  & 0.75 & 0.082 & 0.67 & 0.81 \\
+Solid      &      &\footnotesize{QMC-C} & 0.74 & 0.084 & 0.66 & 0.80 \\
+              &      &\footnotesize{QMC-CL} & 0.68 & 0.113 & 0.57 & 0.68 \\ % \hline
               & Exp.  &      & 0.72 & 0.144 & 0.57 & 0.65 \\ \hline
 \\
 \multicolumn{2}{l} {RPA fit}    &  & $~n^-_{\nn{RPA}}$     & $~n^+_{\nn{RPA}}$      &      &      \\ \hline
-Liquid    & Theo. &\footnotesize{I} & 0.61 & 0.155 & 0.45 & \textbf{0.54} \\
-Solid     & Theo. &\footnotesize{I} & 0.66 & 0.125 & 0.53 & \textbf{0.64} \\
+Liquid    & Theo. &\footnotesize{QMC} & 0.61 & 0.155 & 0.45 & \textbf{0.54} \\
+Solid     & Theo. &\footnotesize{QMC} & 0.66 & 0.125 & 0.53 & \textbf{0.64} \\
 \hline
 \\
 \multicolumn{3}{l} {RPA correction}    & $~n^-_{\nn{cor}}$     & $~n^+_{\nn{cor}}$      &      &      \\ \hline
-              & Exp. &\footnotesize{I} & 0.56 & 0.206 & 0.35 &  0.42 \\ 
-Liquid     &      &\footnotesize{II}& 0.57 & 0.206 & 0.36 & \textbf{0.43} \\
-              &     &\footnotesize{III} & 0.63 & 0.178 & 0.45 &  0.54 \\  \hline
-              & Exp. &\footnotesize{I}  & 0.62 & 0.187 & 0.44 &  0.53 \\ 
-Solid      &      &\footnotesize{II} & 0.63 & 0.185 & 0.45 & \textbf{0.54} \\
-              &      &\footnotesize{III} & 0.69 & 0.156 & 0.54 &  0.65 \\ % \hline
+              & Exp. &\footnotesize{QMC} & 0.56 & 0.206 & 0.35 &  0.42 \\
+Liquid     &      &\footnotesize{QMC-C}& 0.57 & 0.206 & 0.36 & \textbf{0.43} \\
+              &     &\footnotesize{QMC-CL} & 0.63 & 0.178 & 0.45 &  0.54 \\  \hline
+              & Exp. &\footnotesize{QMC}  & 0.62 & 0.187 & 0.44 &  0.53 \\
+Solid      &      &\footnotesize{QMC-C} & 0.63 & 0.185 & 0.45 & \textbf{0.54} \\
+              &      &\footnotesize{QMC-CL} & 0.69 & 0.156 & 0.54 &  0.65 \\ % \hline
 \hline\\
 \end{tabular}
 \caption{ \label{tab:zkf}
@@ -236,16 +236,17 @@ $Z_{k_F}$ and related parameters:
 %``Averaging'' means the fit to $n(k)$ was determined by values of $k$ in the range:  $k_F-\delta k \le k \le k_F+\delta k$, where $\delta k=  0.05 a.u.$
 ``Power fit'' results are from a linear fit to $\ln(k)$ vs. $\ln(|k-k_F|)$.
 ``RPA fit'' means $n(k)$ is fitted to RPA form eq.~(\ref{eq:rpa-nk}).
-``RPA  correction'' applies the correction $n^{\pm}_{\nn{cor}}$ =  $n^{\pm}_{\nn{pow}}$(Exp.)+$\Delta n^{\pm}$, where $\Delta n^{\pm}$ = $n^{\pm}_{\nn{RPA}}$(Theo.)-$n^{\pm}_{\nn{pow}}$(Theo.)}
-Theory I are the raw  QMC $n(k)$ values, Theory II QMC values are corrected with the convolution, and Theory III from the  Lorentzian convolution having long tails.
+``RPA  correction'' applies the correction $n^{\pm}_{\nn{cor}}$ =  $n^{\pm}_{\nn{pow}}$(Exp.)+$\Delta n^{\pm}$, where $\Delta n^{\pm}$ = $n^{\pm}_{\nn{RPA}}$(Theo.)-$n^{\pm}_{\nn{pow}}$(Theo.).Theory QMC are the raw  QMC $n(k)$ values, Theory QMC-C values are corrected with the convolution, and Theory QMC-CL are from the Lorentzian convolution having long tails.
+\yy{The bold values are our best estimates.}
+}
 \end{table}
 
 \begin{figure}
 \includegraphics[bb= 70 10 500 700, width=7.5cm]{fig3.pdf}
-\caption{Momentum densities vs. wave vector:  Theories for liquid (a) and solid (b) are shown. [$\cdot$] indicates original outputs (Theory-I.), [$*$]  convoluted theory (-II.), and [$\times$] convoluted with Lorentzian (-III).  Experiments on liquid and solid are shown in (c) and (d). Those for HEG is also shown in (c).
+\caption{Momentum densities vs. wave vector:  Theories for liquid (a) and solid (b) are shown. [$\cdot$] indicates original outputs (QMC), [$*$]  convoluted theory (-C), and [$\times$] convoluted with Lorentzian (-CL).  Experiments on liquid and solid are shown in (c) and (d). Those for HEG is also shown in (c).
  $\Diamond$ in (b) indicate $n^{\pm}$ by RPA fit ($n^{\pm}_{\nn{RPA}}$)  
 while $\Delta_{\!\nn{Log}} n^{\pm}$ represents $ | \nn{log}_{10} n^{\pm}_{\nn{pow}} \,-\, \nn{log}_{10} n^{\pm}_{\nn{RPA}} | $,
-where $ n^{\pm}_{\nn{pow}} $s are given by power fits for three cases (I., II., and III.).
+where $ n^{\pm}_{\nn{pow}} $s are given by power fits for three cases \yy{(QMC, QMC-C, and QMC-CL)}.
 } 
 \label{Fig.3}
 \end{figure}
@@ -267,7 +268,7 @@ Liquid Li has a slightly lower density, thus a smaller $k_F$, making $J(p)$ high
 Furthermore, $n(k)$ in the liquid shows a slightly smaller drop at $ k_F $  possibly because of more disorder effect and  larger electron correlation effect in the expanded system.
 As mentioned above, solid Li has an anisotropic Fermi surface; its radius varies by several percent~\cite{saku95,schulke96}. Hence a simple comparison is problematic.
 Nonetheless, the comparison across the melting point is consistent with expectations, indicating that the solid sample consists of randomly oriented domains.
-A sharp drop at $k_F$ persists even after the spherical averaging, as we verified with band theory  calculations based on the LDA (see, Inset in Fig.2d).
+A sharp drop at $k_F$ persists even after the spherical averaging, as we verified with band theory calculations based on the LDA (see, Inset in Fig.2d).
 
 %In order to determine $Z_{k_F}$ we follow the procedure in earlier study of Na~\cite{simo10}: $Z_{k_F}$ is determined by the difference between $dJ/dp$ at $p\,$s slightly smaller and larger than $p_F$.
 %This is equivalent to evaluating the difference between $n(k)$ at $k\,$s slightly smaller and larger than $k_F$.
@@ -278,17 +279,17 @@ A sharp drop at $k_F$ persists even after the spherical averaging, as we verifie
 %The obtained $Z_{k_F}\,$s are summarized in the ``Averaging'' section of TABLE~\ref{tab:zkf}.
 
 %The advantage of the above analysis is that it is independent of the model but it obviously tends to overestimate $Z_{k_F}$ as the momentum densities are determined away from $k_F$.
-According to the definition, $Z_{k_F}$ is defined in the limit of $k$ $\to$ $k_F$.
+$Z_{k_F}$ is defined in the limit of $k$ $\to$ $k_F$.
 Sch{\"u}lke \ii{et al.}\,\,constructed a model where $n(k)$ decreases as $-(k/k_F)^{8}$ or $(k/k_F)^{-8}$ with increasing $k$~\cite{schulke96}.
 Based on their model, we first tried to plot $n(k)$ $vs$ $(k/k_F)^{\pm 8}$ but we did not find a linear behavior.
 %This fact encourages us to carefully investigate the asymptotic behaviors upon 
-We assume a more general  power law behavior:
+We assume a more general power law behavior:
 \begin{eqnarray}
 n(k) &=& n_0 - \alpha^{-}  (k/k_F)^{\beta^-}  \;\;\;\; (k \leq k_F)  \nonumber \\
 &=&  \alpha^{+}  (k/k_F)^{\beta^+}  \;\;\;\;\;\;\;\;\;\;\;\; (k>k_F).
 \end{eqnarray}
 %Here, $\alpha^{+(-)}$ indicate the densities extrapolated at ${k=0\,(\infty) \to k_F}$ and $\beta^{+(-)}$ the exponent.
-The $-$ (or $+$) sign represents the extrapolation from  below (or above) $k_F$.
+The $-$ (or $+$) sign represents the extrapolation from below (or above) $k_F$.
 
 Figure 3 shows the log-log plots for $n(k)$ vs $(k/k_F)$. %, on which linear fits are indicated together. 
 We find that the theoretical $n(k)$ has  exponents $\beta$$\sim\pm$4, depending on the broadening functions.
@@ -359,7 +360,7 @@ To reduce the experimental errors further, the broadening due to final state eff
 
 The experiment was performed under approvals of JASRI/SPring-8 (Prop. No. 2011B4250, 2012A4253-4254) and NSRRC, Taiwan (2011-2-105).
 DC and YY were supported by DOE Grant NA DE-NA0001789.
-This work made use of the Blue Waters sustained-petascale computing project and the Illinois Campus Cluster, supported by the National Science Foundation (awards OCI-0725070 and ACI-1238993), the state of Illinois, the University of Illinois at Urbana-Champaign and its National Center for Supercomputing Applications.
+\yy{This work made use of the Blue Waters sustained-petascale computing project and the Illinois Campus Cluster, supported by the National Science Foundation (awards OCI-0725070 and ACI-1238993), the state of Illinois, the University of Illinois at Urbana-Champaign and its National Center for Supercomputing Applications.}
        
 \bibliography{lithium}
 %\begin{thebibliography}{2}
