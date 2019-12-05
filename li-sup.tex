@@ -77,15 +77,15 @@ Disordered configurations were generated from classical molecular dynamics (MD) 
 \begin{figure}[h]
 \includegraphics[scale=0.48]{figures/009d_amass-cont1_t500}
 \includegraphics[scale=0.48]{figures/009d_amass-temp330}
-\caption{Structure factor of disordered lithium configurations in liquid (left) and solid (right) phases. 32 lithium configurations were generated in each phase. Each configuration contained 432 lithium atoms in a cubic box with side length 20.96$\AA$. The liquid configurations were generated at $T=500K$, whereas the solid configurations were generated at $T=330K$. The blue crosses are spherically-averaged $S(k)$ calculated directly in reciprocal space. The solid line is the Fourier transform of the real-space pair correlation function $g(r)$. The gray circles are experimental values from X-ray scattering.[cite A. Mokshin and book].\label{fig:lisk}}
+\caption{Structure factor of disordered lithium configurations in liquid (left) and solid (right) phases. 32 lithium configurations were generated in each phase. Each configuration contained 432 lithium atoms in a cubic box with side length 20.96$\AA$. The liquid configurations were generated at $T=500K$, whereas the solid configurations were generated at $T=330K$. The blue crosses are spherically-averaged $S(k)$ calculated directly in reciprocal space. The solid line is the Fourier transform of the real-space pair correlation function $g(r)$. The gray circles are experimental values from X-ray scattering~\cite{Waseda1981,Mokshin2018}\label{fig:lisk}}
 \end{figure}
 
 \subsection{QMC Energies}
 
 The orbitals in the Slater determinant were obtained using KS-LDA. We used a planewave cutoff of 256 Ry in the all-electron calculation. The resultant orbitals were modified to remove the approximate electron-ion cusp, which is exactly re-introduced in the Jastrow. All pseudopotential calculations used the BFD pseudopotential and a planewave cutoff of 16 Ry.
 
-QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study [Filippi]. 
-QMC energies of the all-electron simulations are shown in the first three rows of Table~\ref{tab:qmc-etv}. Timestep error is $\sim$ 3 mha/e/a.u.. Mixed-estimator error of the kinetic energy is $\sim$ 10 mha/e. These errors are larger than their pseudopotential counterparts. Nevertheless, our DMC total energy of -2.5142 ha/e is within 1.5 mha/e of the -2.5129 ha/e obtained in a previous QMC study using localized basis and the PBE functional [Rasch2015]. The previous study was performed at a valence density of $r_s=3.24$, which is very close to our $r_s=3.25$.
+QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study~\cite{Filippi1999}. 
+QMC energies of the all-electron simulations are shown in the first three rows of Table~\ref{tab:qmc-etv}. Timestep error is $\sim$ 3 mha/e/a.u.. Mixed-estimator error of the kinetic energy is $\sim$ 10 mha/e. These errors are larger than their pseudopotential counterparts. Nevertheless, our DMC total energy of -2.5142 ha/e is within 1.5 mha/e of the -2.5129 ha/e obtained in a previous QMC study using localized basis and the PBE functional~\cite{Rasch2015}. The previous study was performed at a valence density of $r_s=3.24$, which is very close to our $r_s=3.25$.
 Energies from the pseudopotential simulations are shown in the remaining rows of Table~\ref{tab:qmc-etv}. The difference between pseudopotential DMC and VMC total energies are consistently around 1 mha/e. Further, the timestep error is $\sim$ 0.1 mha/e/a.u. and the mixed-estimator error of the kinetic energy is $<$ 1 mha/e. These small differences verify the high quality of our trial wavefunction for the valence electrons.
 
 \begin{table}[h]
@@ -226,7 +226,7 @@ lin. ex. & 80.0 & 0.997 & 2.4420 & 2.510(6) & 13.5 & 2.77 \\
 \end{subtable}
 \end{table}
 
-%\bibliographystyle{unsrt}
-%\bibliography{ref}
+\bibliographystyle{apsrev4-1}
+\bibliography{ref}
 
 \end{document}
