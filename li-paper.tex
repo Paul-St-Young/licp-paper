@@ -45,7 +45,7 @@
 \author{Yubo Yang}
 \affiliation{Department of Physics, University of Illinois, Urbana, Illinois 61801, USA}
 \author{Nozomu Hiraoka}
-\affiliation{National Synchrotron Radiation Research Center, Hsinchu, 30076, Taiwan}
+\affiliation{National Synchrotron Radiation Research Center, Hsinchu 30076, Taiwan}
 \author{Kazuhiro Matsuda}
 \affiliation{Graduate School of Science, Kyoto University, Kyoto 606-8502, Japan}
 \author{Markus Holzmann}
@@ -73,7 +73,7 @@ While the Lam-Platzman correction has been shown to be accurate by QMC~\cite{Fil
 
 Both theoretical approximation and experimental procedure may be responsible for a significant fraction of the aforementioned discrepancy. On the experiment side, finite momentum resolution and final-state effects~\cite{Sternemann2000,Soininen2001} both broaden the measured Compton profile. On the theory side, the lack of electronic correlation and the use of pseudopotential both narrow the computed Compton profile. Furthermore, many subtle complications may also be responsible for part of the discrepancy. Examples include: multiple scattering correction, background subtraction, thermal expansion, electron-phonon coupling, and relativistic effects.
 
-In this paper, we present much improved QMC calculations on the solid and the liquid state of lithium. Firstly, we use grand-canonical twist-averaging~\cite{Lin2001} to access the momentum distribution at arbitrary momentum while preserving a sharp Fermi surface. We obtain a momentum resolution of 0.040 a.u., which is higher than the 0.068 a.u. achieved previously~\cite{Filippi1999} (It is straight-forward to further increase momentum resolution given more computational resources). Secondly, we perform DMC to improve the trial wavefunction. Thirdly, we use all-electron QMC to explore the pseudopotential bias in the Compton profile. We find that the pseudopotential bias is responsible for the majority of discrepancy between pseudopotential QMC and experimental Compton profiles away from the Fermi surface. Fourth and finally, we apply recently developed finite-size correction~\cite{Holzmann2009,Holzmann2011} to obtain the momentum distribution in the thermodynamic limit. Using this improved procedure, we calculate the disorder-averaged Compton profiles for polycrystal and liquid lithium and obtain good agreement with recent high-resolution synchrotron experiment [K. Matsuda and N. Hiraoka].
+In this paper, we present much improved QMC calculations on the solid and the liquid state of lithium. Firstly, we use grand-canonical twist-averaging~\cite{Lin2001} to access the momentum distribution at arbitrary momentum while preserving a sharp Fermi surface. We obtain a momentum resolution of 0.040 a.u., which is higher than the 0.068 a.u. achieved previously~\cite{Filippi1999} (It is straight-forward to further increase momentum resolution given more computational resources). Secondly, we perform DMC to improve the trial wavefunction. Thirdly, we use all-electron QMC to explore the pseudopotential bias in the Compton profile. We find that the pseudopotential bias is responsible for the majority of discrepancy between pseudopotential QMC and experimental Compton profiles away from the Fermi surface. Fourth and finally, we apply recently developed finite-size correction~\cite{Holzmann2009,Holzmann2011} to obtain the momentum distribution in the thermodynamic limit. Using this improved procedure, we calculate the disorder-averaged Compton profiles for polycrystal and liquid lithium and obtain good agreement with recent high-resolution synchrotron experiment [N. Hiraoka and K. Matsuda].
 
 This paper is organized as follows. In section \ref{sec:method}, we describe the simulation methods used to obtain the QMC momentum distributions. In section \ref{sec:results}, we show the QMC momentum distributions and the resulting Compton profiles in comparison with experiment. In section \ref{sec:discussion}, we discuss the influence of various physical effects on the momentum distribution in an attempt to explain the remaining discrepancy between QMC and experiment.
 
@@ -231,10 +231,7 @@ YY and DMC were funded by DOE 0002911. This work made use of the Blue Waters sus
 %We would like to thank Kazuhiro Matsuda and Nozomu Hiraoka for sharing their experimental Compton profiles with us.
 We would like to thank Ilkka Kyl\"anp\"a\"a and Jaron Krogel for valuable discussions.
 
-
-
-%\bibliographystyle{apsrev}
 \bibliographystyle{apsrev4-1}
-\bibliography{ref,qmc,basic}
+\bibliography{ref}
 
 \end{document}
