@@ -77,7 +77,8 @@ Disordered configurations were generated from classical molecular dynamics (MD) 
 \begin{figure}[h]
 \includegraphics[scale=0.48]{figures/009d_amass-cont1_t500}
 \includegraphics[scale=0.48]{figures/009d_amass-temp330}
-\caption{Structure factor of disordered lithium configurations in liquid (left) and solid (right) phases. 32 lithium configurations were generated in each phase. Each configuration contained 432 lithium atoms in a cubic box with side length 20.96$\AA$. The liquid configurations were generated at $T=500K$, whereas the solid configurations were generated at $T=330K$. The blue crosses are spherically-averaged $S(k)$ calculated directly in reciprocal space. The solid line is the Fourier transform of the real-space pair correlation function $g(r)$. The gray circles are experimental values from X-ray scattering~\cite{Waseda1981,Mokshin2018}\label{fig:lisk}}
+\caption{Structure factor of disordered lithium configurations in liquid (left) and solid (right) phases. 32 lithium configurations were generated in each phase. Each configuration contained 432 lithium atoms in a cubic box with side length 20.96$\AA$. The liquid configurations were generated at $T=500K$, whereas the solid configurations were generated at $T=330K$. The blue crosses are spherically-averaged $S(k)$ calculated directly in reciprocal space. The solid line is the Fourier transform of the real-space pair correlation function $g(r)$. The gray circles are experimental values from X-ray scattering~\cite{Waseda1981,Mokshin2018}.}
+\label{fig:lisk}
 \end{figure}
 
 \subsection{QMC Energies}
@@ -106,15 +107,15 @@ where $\rho_{\bs{k}} = \sum\limits_j^{N_e} e^{i\bs{r}_j\cdot\bs{k}}$ is the coll
 
 \begin{figure}[h]
 %\includegraphics[scale=0.6]{figures/li40bg_dsk-bfd-fc}
-\includegraphics[scale=0.48]{figures/li40bg_dsk-bfd}
-\includegraphics[scale=0.48]{figures/li40bg_dsk-fc}
+\includegraphics[width=0.48\linewidth]{figures/li40bg_dsk-bfd}
+\includegraphics[width=0.48\linewidth]{figures/li40bg_dsk-fc}
 \caption{Electronic static structure factor of pseudopotential (left) and all-electron (right) QMC simulations in 54-atom and 432-atom simulation cells. The black line in the left plot is RPA $S(k)$ at valence density $r_s=3.25$. It fits lithium valence $S(k)$ remarkably well for $k<0.4 a.u.$. In the right plot, the black line is RPA $S(k)$ at density $r_s=3.25/\sqrt{3}$. \label{fig:qmc-dsk}}
 \end{figure}
 
 
 \subsection{QMC Momentum Distribution}
 
-The momentum distribution is obtained on a cubic regular grid with spacing $dk=0.040$ a.u. in reciprocal space. To achieve this grid spacing, uniform twist-average grids of size $8^3$ and $4^3$ are used in the 54-atom and 432-atom simulations, respectively. The twist-average grid is either $\Gamma$-centered or shifted by $dk/2$ in all directions. In the perfect crystal, cubic symmetries reduce the number of unique twists from 64 to 4 and 512 to 20 on a shifted grid, and 64 to 10 and 512 to 35 on a $\Gamma$-centered grid. The reciprocal-space grid is truncated at a spherical cutoff of $1.45$ a.u. in the solid and liquid simulations.
+The momentum distribution is obtained on a cubic regular grid with spacing $dk=0.040$ a.u. in reciprocal space. To achieve this grid spacing, uniform twist-average grids of size $8^3$ and $4^3$ are used in the 54-atom and 432-atom simulations, respectively. The twist-average grid is either $\Gamma$-centered or shifted by $dk/2$ in all directions. In the perfect crystal, cubic symmetries reduce the number of unique twists from 64 to 4 and 512 to 20 on a shifted grid, and 64 to 10 and 512 to 35 on a $\Gamma$-centered grid. The reciprocal-space grid is truncated at a spherical cutoff of $1.49$ a.u. in the solid and liquid simulations.
 %The tail of the momentum distribution is extended to at least $3.0$ a.u. in post-processing.
 %in 1/48th of the cubic reciprocal space, representing the irreducible wedge. The results are unfolded using cubic symmetries onto a regular grid with a spherical cutoff.
 
@@ -122,17 +123,20 @@ A QMC Compton profile is computed in four steps. First, the 3D DMC $n(\bs{k})$ i
 \begin{align} \label{eq:nktail}
 n_{tail}(k, A, Z) = A\left(\dfrac{2Z}{(k^2+Z^2)^2}\right)^2,
 \end{align}
-where $A$ and $Z$ are fitting parameters. Fourth and finally, the 1D $n(k)$ is integrated to obtain the spherically-averaged Compton profile $J(p)$ via eqn.~(\ref{eq:jp1d})
+where $A$ and $Z$ are fitting parameters. Fourth and finally, the 1D $n(k)$ is integrated to obtain the spherically-averaged Compton profile $J(p)$ via eqn.~(\ref{eq:jp1d}) and split into two parts at a cutoff momentum $k_c$
 \begin{align} \label{eq:jp1d}
-J(p) = \left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right) \int\limits_p^\infty k n(k) dk,
+J(p) = \left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)\left[
+\int\limits_p^{k_c} k n(k) dk + \int\limits_{k_c}^{\infty} k n_{tail}(k, A^*, Z^*) dk
+\right],
 \end{align}
-where $\Omega$ is the volume of the supercell and $N_{Li}$ is the number of lithium atoms in the supercell. The prefactor is needed because $n(\bs{k})$ in simulation is scaled by reciprocal volume and is always in the range [0, 2]. The sum-rules of the momentum distribution and the Compton profile in our convention are
+where $\Omega$ is the volume of the supercell, $N_{Li}$ is the number of lithium atoms in the supercell, and $A^*$, $Z^*$ are chosen to satisfy momentum distribution sum rules. %The prefactor is needed because $n(\bs{k})$ in simulation is scaled by reciprocal volume and is always in the range [0, 2].
+The sum-rules of the momentum distribution and the Compton profile in our convention are
 \begin{align}
-\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k}) = N_e/N_{Li}, \label{eq:nsum} \\
-\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k}) = \braket{T}/N_{Li}, \label{eq:tsum} \\
-\int_{-\infty}^{\infty} dp J(p) = N_e/N_{Li}, \label{eq:jpsum}
+\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k}) =& \braket{N_e}/N_{Li}, \label{eq:nsum} \\
+\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k})~\frac{\hbar^2k^2}{2m_e} =& \braket{T}/N_{Li}, \label{eq:tsum} \\
+\int_{-\infty}^{\infty} dp J(p) =& \braket{N_e}/N_{Li}, \label{eq:jpsum}
 \end{align}
-where $\braket{T}$ is the expectation value of the total kinetic energy. We found it important to extend the tail of $n(k)$ so that it satisfies the sum rules. The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}-\ref{tab:fc-ntsum}, along with sum-rule compliance. The normalization sum rule eqn.~(\ref{eq:nsum}) is labeled ``nsum''. The kinetic energy sum rule eqn.~(\ref{eq:tsum}) is labeled ``tsum''.
+where $\braket{T}$ is the expectation value of the total kinetic energy. We find it important to extend the tail of $n(k)$ so that it satisfies the sum rules. The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}-\ref{tab:fc-ntsum}, along with sum-rule compliance. The normalization sum rule eqn.~(\ref{eq:nsum}) is labeled ``nsum''. The kinetic energy sum rule eqn.~(\ref{eq:tsum}) is labeled ``tsum''.
 
 \begin{table}[h]
 \caption{Perfect crystal spherically-averaged momentum distribution sum rules and tail. \label{tab:crystal-ntsum}}
