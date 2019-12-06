@@ -17,6 +17,8 @@
 % \begin{shaded}\begin{verbatim} for block code
 % \begin{subfigure}{0.48\textwidth} for subfigure
 
+\graphicspath{{./figures/}}
+
 % for including code snippets
 \definecolor{lightblue}{rgb}{0.053,0.5,0.977}
 \definecolor{deepblue}{rgb}{0,0,0.5}
@@ -75,8 +77,8 @@ Université Grenoble I and CNRS, 38042 Grenoble, France}
 Disordered configurations were generated from classical molecular dynamics (MD) simulations with the modified embedded atom potential (MEAM) as implemented in LAMMPS. 32 lithium configurations were generated in solid and liquid phases. The Li-Li structure factor was calculated from the MD runs and compared to X-ray data in Fig.~\ref{fig:lisk}.
 
 \begin{figure}[h]
-\includegraphics[scale=0.48]{figures/009d_amass-cont1_t500}
-\includegraphics[scale=0.48]{figures/009d_amass-temp330}
+\includegraphics[scale=0.48]{009d_amass-cont1_t500}
+\includegraphics[scale=0.48]{009d_amass-temp330}
 \caption{Structure factor of disordered lithium configurations in liquid (left) and solid (right) phases. 32 lithium configurations were generated in each phase. Each configuration contained 432 lithium atoms in a cubic box with side length 20.96$\AA$. The liquid configurations were generated at $T=500K$, whereas the solid configurations were generated at $T=330K$. The blue crosses are spherically-averaged $S(k)$ calculated directly in reciprocal space. The solid line is the Fourier transform of the real-space pair correlation function $g(r)$. The gray circles are experimental values from X-ray scattering~\cite{Waseda1981,Mokshin2018}.}
 \label{fig:lisk}
 \end{figure}
@@ -90,10 +92,10 @@ QMC energies of the all-electron simulations are shown in the first three rows o
 Energies from the pseudopotential simulations are shown in the remaining rows of Table~\ref{tab:qmc-etv}. The difference between pseudopotential DMC and VMC total energies are consistently around 1 mha/e. Further, the timestep error is $\sim$ 0.1 mha/e/a.u. and the mixed-estimator error of the kinetic energy is $<$ 1 mha/e. These small differences verify the high quality of our trial wavefunction for the valence electrons.
 
 \begin{table}[h]
+\caption{QMC energies and variance. All energies are reported in ha/e. Variance is in ha$^2$/e. Timestep is in ha$^{-1}$. Monte Carlo acceptance rate (acc) is in percent.}
 \include{tables/li61b_eta}
-\caption{QMC energies and variance. All energies are reported in ha/e. Variance is in ha$^2$/e. Timestep is in ha$^{-1}$. Monte Carlo acceptance rate (acc) is in percent.\label{tab:qmc-etv}}
+\label{tab:qmc-etv}
 \end{table}
-
 
 \subsection{QMC Electronic Structure Factor}
 
@@ -103,19 +105,19 @@ The fluctuating electronic structure factor
 (\rho_{\bs{k}}-\bar{\rho}_{\bs{k}})^* (\rho_{\bs{k}}-\bar{\rho}_{\bs{k}})
 \right\rangle,
 \end{align}
-where $\rho_{\bs{k}} = \sum\limits_j^{N_e} e^{i\bs{r}_j\cdot\bs{k}}$ is the collective coordinate of the electrons. The $\braket{}$ denotes expectation value, and $\bar{\rho}_{\bs{k}}\equiv\braket{\rho}_{\bs{k}}$. The QMC fluctuating structure factors are shown in Fig.~\ref{fig:qmc-dsk}. All values are linearly extrapolated to remove the mixed-estimator bias. The pseudopotential $\delta S(k)$ is insensitive to disorder. The $\delta S(k)$ from 432-atom simulations of perfect crystal, disordered solid, and liquid structures are indistinguishable from one another. Further, finite system size has only a small effect on the electronic structure factor, because the $\delta S(k)$ of the 54-atom simulation is very close to the 432-atom one. All pseudopotential $\delta S(k)$ can be accurately described by the RPA $S(k)$ at the same valence density when $k<0.4$ a.u.. Our all-electron structure factor agrees well with that from the previous QMC study [Rasch2015].
+where $\rho_{\bs{k}} = \sum\limits_j^{N_e} e^{i\bs{r}_j\cdot\bs{k}}$ is the collective coordinate of the electrons. The $\braket{}$ denotes expectation value, and $\bar{\rho}_{\bs{k}}\equiv\braket{\rho}_{\bs{k}}$. The QMC fluctuating structure factors are shown in Fig.~\ref{fig:qmc-dsk}. All values are linearly extrapolated to remove the mixed-estimator bias. The pseudopotential $\delta S(k)$ is insensitive to disorder. The $\delta S(k)$ from 432-atom simulations of perfect crystal, disordered solid, and liquid structures are indistinguishable from one another. Further, finite system size has only a small effect on the electronic structure factor, because the $\delta S(k)$ of the 54-atom simulation is very close to the 432-atom one. All pseudopotential $\delta S(k)$ can be accurately described by the RPA $S(k)$ at the same valence density when $k<0.4$ a.u.. Our all-electron structure factor agrees well with that from the previous QMC study~\cite{Rasch2015}.
 
 \begin{figure}[h]
-%\includegraphics[scale=0.6]{figures/li40bg_dsk-bfd-fc}
-\includegraphics[width=0.48\linewidth]{figures/li40bg_dsk-bfd}
-\includegraphics[width=0.48\linewidth]{figures/li40bg_dsk-fc}
+%\includegraphics[scale=0.6]{li40bg_dsk-bfd-fc}
+\includegraphics[width=0.48\linewidth]{li40bg_dsk-bfd}
+\includegraphics[width=0.48\linewidth]{li40bg_dsk-fc}
 \caption{Electronic static structure factor of pseudopotential (left) and all-electron (right) QMC simulations in 54-atom and 432-atom simulation cells. The black line in the left plot is RPA $S(k)$ at valence density $r_s=3.25$. It fits lithium valence $S(k)$ remarkably well for $k<0.4 a.u.$. In the right plot, the black line is RPA $S(k)$ at density $r_s=3.25/\sqrt{3}$. \label{fig:qmc-dsk}}
 \end{figure}
 
 
 \subsection{QMC Momentum Distribution}
 
-The momentum distribution is obtained on a cubic regular grid with spacing $dk=0.040$ a.u. in reciprocal space. To achieve this grid spacing, uniform twist-average grids of size $8^3$ and $4^3$ are used in the 54-atom and 432-atom simulations, respectively. The twist-average grid is either $\Gamma$-centered or shifted by $dk/2$ in all directions. In the perfect crystal, cubic symmetries reduce the number of unique twists from 64 to 4 and 512 to 20 on a shifted grid, and 64 to 10 and 512 to 35 on a $\Gamma$-centered grid. The reciprocal-space grid is truncated at a spherical cutoff of $1.49$ a.u. in the solid and liquid simulations.
+The momentum distribution is obtained on a cubic regular grid with spacing $dk=0.040$ a.u. in reciprocal space. To achieve this grid spacing, uniform twist-average grids of size $8^3$ and $4^3$ are used in the 54-atom and 432-atom simulations, respectively. The twist-average grid is $\Gamma$-centered in the perfect crystal calculations and shifted by $dk/2$ in all directions in disordered calculations. In the perfect crystal, cubic symmetries reduce the number of unique twists from 64 to 4 and 512 to 20 on a shifted grid, and 64 to 10 and 512 to 35 on a $\Gamma$-centered grid. The reciprocal-space grid is truncated at a spherical cutoff of $1.49$ a.u. in the solid and liquid simulations.
 %The tail of the momentum distribution is extended to at least $3.0$ a.u. in post-processing.
 %in 1/48th of the cubic reciprocal space, representing the irreducible wedge. The results are unfolded using cubic symmetries onto a regular grid with a spherical cutoff.
 
@@ -136,99 +138,28 @@ The sum-rules of the momentum distribution and the Compton profile in our conven
 \left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k})~\frac{\hbar^2k^2}{2m_e} =& \braket{T}/N_{Li}, \label{eq:tsum} \\
 \int_{-\infty}^{\infty} dp J(p) =& \braket{N_e}/N_{Li}, \label{eq:jpsum}
 \end{align}
-where $\braket{T}$ is the expectation value of the total kinetic energy. We find it important to extend the tail of $n(k)$ so that it satisfies the sum rules. The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}-\ref{tab:fc-ntsum}, along with sum-rule compliance. The normalization sum rule eqn.~(\ref{eq:nsum}) is labeled ``nsum''. The kinetic energy sum rule eqn.~(\ref{eq:tsum}) is labeled ``tsum''.
+where $\braket{T}$ is the expectation value of the total kinetic energy. We find it important to extend the tail of $n(k)$ so that it satisfies the sum rules. The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}, along with sum-rule compliance.
 
 \begin{table}[h]
-\caption{Perfect crystal spherically-averaged momentum distribution sum rules and tail. \label{tab:crystal-ntsum}}
-\begin{subtable}{0.49\textwidth}
-% li40_bfd-1/li6a/gcta.py
-% li40_bfd-4/target_kglue/glue_tail.py
-\caption{BCC Crystal BFD N54 $n(k)$ sum rules with and without extended tail.\label{tab:solid-bfd-n54-sum02}}
-\begin{tabular}{cclllll}
-\toprule
-method & kcut & nsum & tsum & texpect & A & Z \\
-\midrule
-VMC & 1.57 & 1.001 & 0.1407 \\
-DMC & 1.57 & 1.002 & 0.1397 \\
-lin. ex. & 1.57 & 1.003 & 0.1387 \\
-VMC & 80.0 & 1.007 & 0.1518 & 0.15242(6) & 0.06 & 0.40 \\
-DMC & 80.0 & 1.007 & 0.1486 & 0.15006(4) & 0.06 & 0.35 \\
-lin. ex. & 80.0 & 1.006 & 0.1457 & 0.14771(8) & 0.07 & 0.30 \\
-\bottomrule
-\end{tabular}
-\end{subtable}
-\begin{subtable}{0.49\textwidth}
-% li40_bfd-1/li6b/gcta.py
-% li40_bfd-4/target_kglue/glue_tail.py
-\caption{BCC Crystal BFD N432 $n(k)$ sum rules with and without extended tail.\label{tab:solid-bfd-n432-sum02}}
-\begin{tabular}{ccllll}
-\toprule
-method & kcut & nsum & tsum & A & Z \\
-\midrule
-VMC & 1.5 & 0.992 & 0.1372 \\
-DMC & 1.5 & 0.992 & 0.1370 \\
-lin. ex. & 1.5 & 0.992 & 0.1368 \\
-VMC & 80.0 & 0.997 & 0.1465 & 0.10 & 0.26 \\
-DMC & 80.0 & 0.997 & 0.1459 & 0.13 & 0.22 \\
-lin. ex. & 80.0 & 0.997 & 0.1453 & 0.18 & 0.18 \\ 
-\bottomrule
-\end{tabular}
-\end{subtable}
+\caption{Fits to $n(k)$ tails and sum rule compliance. The normalization sum rule eqn.~(\ref{eq:nsum}) is labeled ``nsum''. The kinetic energy sum rule eqn.~(\ref{eq:tsum}) is labeled ``tsum''. ``nsum0'' and ``tsum0'' are expected sum-rule values calculated from Table~\ref{tab:qmc-etv}. All sum-rule integrals are split into two parts at $k=k_c$ in the same way as eq.~(\ref{eq:jp1d}). $\Delta n(k_c)\equiv n_{tail}(k_c)-n(k_c)$ is the difference between the fit analytical tail and QMC data at the split point. The second row is ``full-core valence'' obtained by subtracting the HF core contribution from the QMC ae calculation. The HF core kinetic energy of the Li atom is 7.2239067 ha.}
+\include{tables/li62e_ntsum-tail}
+\label{tab:crystal-ntsum}
 \end{table}
 
-\begin{table}[h]
-\caption{Disordered configurations spherically-averaged momentum distribution sum rules and tail. \label{tab:conf-ntsum}}
-\begin{subtable}{0.49\textwidth}
-\caption{Solid configuration BFD N432 $n(k)$ sum rules with and without extended tail.\label{tab:solid-conf31-bfd-n432-sum02}}
-\begin{tabular}{ccllll}
-\toprule
-method & kcut & nsum & tsum & A & Z \\
-\midrule
-VMC & 1.5 & 0.991 & 0.1379 & \\
-DMC & 1.5 & 0.991 & 0.1380 & \\
-lin. ex. & 1.5 & 0.991 & 0.1380 & \\
-VMC & 80.0 & 0.998 & 0.1503 & 0.049 & 0.465 \\
-DMC & 80.0 & 0.998 & 0.1504 & 0.048 & 0.465 \\
-lin. ex. & 80.0 & 0.998 & 0.1504 & 0.048 & 0.464\\
-\bottomrule
-\end{tabular}
-\end{subtable}
-\begin{subtable}{0.49\textwidth}
-\caption{Liquid BFD N432 $n(k)$ sum rules with and without extended tail.\label{tab:liquid-bfd-n432-sum02}}
-\begin{tabular}{ccllll}
-\toprule
-method & kcut & nsum & tsum & A & Z \\
-\midrule
-VMC & 1.5 & 0.991 & 0.1385 & \\
-DMC & 1.5 & 0.992 & 0.1392 & \\
-lin. ex. & 1.5 & 0.993 & 0.1400 & \\
-VMC & 80.0 & 0.999 & 0.1539 & 0.04 & 0.57 \\
-DMC & 80.0 & 1.000 & 0.1556 & 0.04 & 0.60 \\
-lin. ex. & 80.0 & 1.002 & 0.1582 & 0.04 & 0.65\\
-\bottomrule
-\end{tabular}
-\end{subtable}
-\end{table}
+Tail models in Table~\ref{tab:crystal-ntsum} are shown along with QMC $n(k)$ data in Fig.~\ref{fig:qmc-tail-model}. The QMC all-electron $n(k)$ for the crystal appears to decay slightly slower than HF core $n(k)$ at large $k$. This causes the full-core valence momentum distribution to have a much longer tail than the pseudopotential ones.
 
-\begin{table}[h]
-\caption{All-electron crystal spherically-averaged momentum distribution sum rules and tail. \label{tab:fc-ntsum}}
-\begin{subtable}{0.49\textwidth}
-% li40_fc-4/target_kglue/glue_tail.py
-\caption{BCC crystal full-core N54 $n(k)$ sum rules with and without extended tail.\label{tab:solid-bare-n54-sum02}}
-\begin{tabular}{cclllll}
-\toprule
-method & kcut & nsum & tsum & texpect & A & Z \\
-\midrule
-VMC & 3.0 & 0.858 & 0.9000 \\
-DMC & 3.0 & 0.854 & 0.9032 \\
-lin. ex. & 3.0 & 0.850 & 0.9064 \\
-VMC & 80.0 & 1.002 & 2.4359 & 2.487(6) & 13.5 & 2.76 \\
-DMC & 80.0 & 1.000 & 2.4392 & 2.4982(3) & 13.5 & 2.76 \\
-lin. ex. & 80.0 & 0.997 & 2.4420 & 2.510(6) & 13.5 & 2.77 \\
-\bottomrule
-\end{tabular}
-\end{subtable}
-\end{table}
+\begin{figure}[h]
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\columnwidth]{li62e_ae-hf-tail}
+(a) all-electron $n(k)$
+\end{minipage}
+\begin{minipage}{0.49\linewidth}
+\includegraphics[width=\columnwidth]{li62e_valence-tail}
+(b) valence $n(k)$
+\end{minipage}
+\caption{Models of the high-momentum tail of $n(k)$ based on sum-rule compliance. Left plot shows all-electron momentum distribution from QMC (thick gray line) and Li atomic core contribution from HF (dashed black line). The thin gray line is the $n(k)$ tail model for QMC. Right plot shows valence momentum distributions from QMC (thick colored lines). Each thin line is the tail model for the QMC $n(k)$ of corresponding color. The statistical error of QMC $n(k)$ is on the order of $10^{-4}$ for $k>1.5$, so data close to $10^{-4}$ at large $k$ are not reliable.}
+\label{fig:qmc-tail-model}
+\end{figure}
 
 \bibliographystyle{apsrev4-1}
 \bibliography{ref}
