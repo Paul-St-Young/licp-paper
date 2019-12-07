@@ -93,18 +93,18 @@ In the perfect crystal, the full-core simulation contains 54 lithium atoms, whil
 
 All calculations have been performed at the same density $r_s=3.25$, consistent with the previous QMC study~\cite{Filippi1999}. After obtaining the best QMC results at $r_s=3.25$, we rescale the density of QMC Compton profiles to compare with experiment. The experimental densities are $r_s=3.31$ and $r_s=3.265$ for the liquid and the solid, respectively. We also convolve our QMC Compton profile with a broadening function to approximately account for the combined effect of finite instrument resolution and final-state interaction. The broadening function is an \emph{extended Lorentzian} defined in eq.~(\ref{eq:elorentz})
 \begin{equation}
-b(x,\Gamma,a_1, a_2) = \frac{1}{\tilde{\Omega}} \frac{1}{
-1+a_1(\frac{2x}{\Gamma})^2+a_2(\frac{2x}{\Gamma})^4
+b(x,\Gamma,a_0,a_1, a_2) = \frac{1}{\tilde{\Omega}} \frac{1}{
+a_0+a_1(\frac{2x}{\Gamma})^2+a_2(\frac{2x}{\Gamma})^4
 }.\label{eq:elorentz}
 \end{equation}
-The full-width at half-max $\Gamma=0.024$ a.u. and tail parameters $a_1=0.85$, $a_2=0.15$ are chosen to fit the convolution of the elastic line in the X-ray experiment and the spectral density function of the electrons. $\tilde{\Omega}$ is a normalization constant chosen to ensure $\int dx ~b(x)=1$. We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
+The full-width at half-max $\Gamma=0.024$ a.u. and tail parameters $a_0=1$, $a_1=0.85$, $a_2=0.15$ are chosen to fit the convolution of the elastic line in the X-ray experiment and the spectral density function of the electrons. $\tilde{\Omega}$ is a normalization constant chosen to ensure $\int dx ~b(x)=1$. We use LAMMPS~\cite{Plimpton1993} for the MD simulations, QE~\cite{Giannozzi2009,Enkovaara2017} for the DFT calculations, and QMCPACK~\cite{Kim2018} for the QMC calculations. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
 
 \section{Results} \label{sec:results}
 
 In Fig.~\ref{fig:sl-jp-djp}, we show the valence Compton profiles of solid and liquid lithium from experiment and processed QMC data. The raw QMC data are processed to account for finite-size effect, thermal disorder, pseudopotential bias, density change, final-state effects, and instrument resolution. The QMC Compton profiles agree with experiment immediately inside the Fermi surface (0.2 a.u.$<$p$<$0.4 a.u.) and at large momenta (p$>$0.9  a.u.). However, the QMC Compton profiles show less high-momentum component immediately outside the Fermi surface and too much low-momentum component. Both the theoretical and experimental Compton profiles satisfy the normalization sum rule ($\int_{-\infty}^{\infty} J(p)dp=1$) to better than 2\%. The difference between QMC and experiment Compton profiles can be interpreted as a shift of momentum density from zero to slightly above the Fermi momentum. Interestingly, this difference is almost identical in the solid and the liquid. Thus, cancellation of error allows us to capture the difference between the solid and liquid Compton profiles almost perfectly.
 
 \begin{figure}[h]
-\includegraphics[width=\linewidth]{li58e_sl-jp}
+\includegraphics[width=\linewidth]{li58_sl-jp}
 \caption{Compton profiles of solid (solid line) and liquid (dashed line) lithium from QMC (thin) and experiment (thick). The top panel shows the Compton profiles on an absolute scale. The bottom panel shows the QMC Compton profiles relative to the experiment.\label{fig:sl-jp-djp}}
 \end{figure}
 
