@@ -89,9 +89,9 @@ We use GCTABC to improve the momentum distribution \cite{PhysRevLett.97.076404,H
 
 In the perfect crystal, the full-core simulation contains 54 lithium atoms, while the pseudopotential simulations contain 54 or 432 atoms. We use MD with the modified embedded-atom potential (MEAM)~\cite{Baskes1992} to generate the disordered configurations.  The MD temperatures were elevated to model quantum fluctuations of the nuclei ~\cite{Filippi1998}. We sample the canonical distribution with 432 lithium atoms at 330K and 500K for experiments at 298K and 493K, respectively.
 
-All calculations have been performed at the same density $r_s=3.25$, consistent with the previous QMC study~\cite{Filippi1999}. After obtaining QMC results at $r_s=3.25$, we rescale the density of QMC Compton profiles to match the experimental densities: $r_s=3.31$ for the liquid and $r_s=3.265$ for the solid. 
+All calculations have been performed at the same density $r_s=3.25$, consistent with the previous QMC study~\cite{Filippi1999}. After obtaining QMC results at $r_s=3.25$, we rescale the density of QMC Compton profiles to match the experimental densities: $r_s=3.31$ for the liquid and $r_s=3.265$ for the solid.
 
-\mh{MH: Maybe we should add a short paragraph how we/the experiment determines the valence electron Compton profile already here?}
+In both QMC and experiment, we assume the momentum distribution of the core electrons to remain unmodified from that in the isolated atom. The atomic core orbital is calculated using Hartree-Fock (HF) and removed from all-electron results to produce valence electron contributions.
 
 We convolved our QMC Compton profile with a broadening function to model the instrument resolution and final-state interaction. For this we used the \emph{extended Lorentzian}
 \begin{equation}
@@ -101,7 +101,7 @@ a_0+a_1(\frac{2x}{\Gamma})^2+a_2(\frac{2x}{\Gamma})^4
 \end{equation}
 with $\Gamma=0.024$ a.u., $a_0=1$, $a_1=0.85$ and $a_2=0.15$ chosen to fit the convolution of the elastic line in the X-ray experiment and the spectral density function of the electrons and $\tilde{\Omega}$ such that $\int dx ~b(x)=1$. 
 
-We used LAMMPS~\cite{Plimpton1995} for the MD simulations, QE~\cite{Giannozzi2009,Giannozzi2017,Enkovaara2017} for the DFT, PySCF~\cite{PYSCF} for Hartree-Fock (HF), and QMCPACK~\cite{Kim2018} for QMC. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
+We used LAMMPS~\cite{Plimpton1995} for the MD simulations, QE~\cite{Giannozzi2009,Giannozzi2017,Enkovaara2017} for DFT, PySCF~\cite{PYSCF} for HF, and QMCPACK~\cite{Kim2018} for QMC. The disordered calculations have been automated using the nexus suite of tools~\cite{Krogel2016}.
 
 \section{Results} \label{sec:results}
 
@@ -109,16 +109,16 @@ Figure ~\ref{fig:sl-jp-djp} shows the valence Compton profiles of solid and liqu
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{li58_sl-jp}
-\caption{\mh{Valence electron} Compton profiles of solid (solid line) and liquid (dashed line) lithium from QMC (thin) and experiment (thick). The top panel shows the Compton profiles on an absolute scale. The bottom panel shows  $\Delta J(p)=J_{QMC}-J_{exp}$.}%the QMC Compton profiles relative to the experiment.
+\caption{Valence electron Compton profiles of solid (solid line) and liquid (dashed line) lithium from QMC (thin) and experiment (thick). The top panel shows the Compton profiles on an absolute scale. The bottom panel shows  $\Delta J(p)=J_{QMC}-J_{exp}$.}%the QMC Compton profiles relative to the experiment.
 \label{fig:sl-jp-djp}
 \end{figure}
 
 Figure ~\ref{fig:s-l-djp} shows the change of the Compton profile when the liquid freezes into a solid. The systematic difference  between QMC calculations and experiment is almost identical in the solid and the liquid. Thus, cancellation of error allows us to capture the difference between the solid and liquid Compton profiles almost perfectly.
-The main change is a density-induced outward shift of the Fermi surface. This shift manifests in Fig.~\ref{fig:s-l-djp} as a peak at the solid Fermi momentum $p_F\approx0.578$ a.u. and a parabolic dip centered around $p=0$. Another important difference is the emergence of secondary Fermi surfaces, due to Umklapp scattering in the solid. We expect secondary Fermi surfaces to center around the reciprocal lattice of the lithium crystal. Crystalline lithium is BCC with a lattice constant of $\sim 6.63$ bohr, so its reciprocal lattice is FCC with a lattice constant of $\sim 1.895$ a.u.. The nearest neighbor to $\Gamma$ is $p_1=1.34$ a.u.  along [110]. Therefore, the closest secondary Fermi surface is located at $p_1-p_F=0.762$ a.u., which is exactly where we observe a small peak \mh{(MH: is in't it the zero between the small negative and positive peak?)} in Fig.~\ref{fig:s-l-djp}.
+The main change is a density-induced outward shift of the Fermi surface. This shift manifests in Fig.~\ref{fig:s-l-djp} as a peak at the solid Fermi momentum $p_F\approx0.578$ a.u. and a parabolic dip centered around $p=0$. Another important difference is the emergence of secondary Fermi surfaces, due to Umklapp scattering in the solid. We expect secondary Fermi surfaces to center around the reciprocal lattice of the lithium crystal. Crystalline lithium is BCC with a lattice constant of $\sim 6.63$ bohr, so its reciprocal lattice is FCC with a lattice constant of $\sim 1.895$ a.u.. The nearest neighbor to $\Gamma$ is $p_1=1.34$ a.u.  along [110]. Therefore, the closest secondary Fermi surface is located at $p_1-p_F=0.762$ a.u., which is exactly where we observe a small peak in Fig.~\ref{fig:s-l-djp}.
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{li52e_sl-djp}
-\caption{Difference between solid and liquid \mh{valence electron} Compton profiles.\label{fig:s-l-djp}}
+\caption{Difference between solid and liquid valence electron Compton profiles.\label{fig:s-l-djp}}
 \end{figure}
 
 As mentioned in the beginning of this section, we process the raw QMC data in several steps to make them comparable to experiment. In the following, we present perfect lithium crystal QMC calculations, which we use to validate the processing steps.
@@ -205,8 +205,8 @@ However, we expect the Slater-Jastrow wavefunction to be accurate for simple met
 Further, it can be systematically improved, for example by using backflow transformations \cite{PhysRevB.91.115106}. 
 Calculations on the homogeneous electron gas indicate a small decrease of the discontinuity
 at the Fermi 
-surface \cite{Holzmann2011} reducing the discrepancy with experiment. Quantitive studies of
-backflow effects on the lithium Compton profiles should be adressed in future.
+surface \cite{Holzmann2011} reducing the discrepancy with experiment. Quantitative studies of
+backflow effects on the lithium Compton profiles should be addressed in the future.
 %The change in going from the variational to mixed estimator provides an estimate of missing corelation effects. \david{how big is this?}
 %Going to second order, we have back flow correlation as well as three-body Jastrow.
 
@@ -223,10 +223,10 @@ any small differences between DFT and the exact one.}
 While the DFT Fermi surface may not be accurate in the crystal,  a liquid is isotropic and will have a spherical Fermi surface.
 Given that our liquid - solid Compton profile difference agrees well with experiment (Fig.~\ref{fig:s-l-djp}), we do not consider Fermi surface shape to be responsible for the remaining discrepancy.
 
-{\bf Electron-phonon interaction} Phonons are \mh{partially} absent from our QMC simulations because the lithium ions are clamped. Phonons scatter quasi-particles and decrease their life times. Thus, we expect the inclusion of electron-phonon interaction to decrease the magnitude of the discontinuity in the momentum distribution. \mh{Calculations of the coupled electron-phonon system within the Einstein or Debye model \cite{PhysRev.131.993}, shows that the resulting  broadening
-at zero temperature is essentially given by the Debye frequency.}
-However, the Debye temperature of lithium ($<$400K) is much lower than the Fermi temperature of the electrons, so we expect the effect of the \mh{remaining} electron-phonon coupling \mh{not included
-in our QMC calculations} to be limited very close to the Fermi surface in momentum space, rendering the effect invisible at the scale of Fig.~\ref{fig:s-l-djp}.
+{\bf Electron-phonon interaction} We capture disorder effects due to phonons by averaging over thermal atomic configurations. However, other phonon effects are absent from our QMC simulations because the lithium ions are clamped. Phonons scatter quasi-particles and decrease their life times. Thus, we expect the inclusion of electron-phonon interaction to decrease the magnitude of the discontinuity in the momentum distribution. Calculations of the coupled electron-phonon system within the Einstein or Debye model~\cite{PhysRev.131.993} shows that the resulting broadening
+at zero temperature is essentially given by the Debye frequency.
+However, the Debye temperature of lithium ($<$400K) is much lower than the Fermi temperature of the electrons, so we expect the remaining electron-phonon coupling (not included
+in our QMC calculations) to be limited very close to the Fermi surface in momentum space, rendering the effect invisible at the scale of Fig.~\ref{fig:s-l-djp}.
 
 
 {\bf Finite size effects}  Finite-size effects (FSE) are more challenging to deal with in a many-body simulation than in an effective one-particle theory such as DFT which is formulated for an infinite lattice. A calculation performed in a larger simulation cell simply makes the momentum-space grid denser. In contrast, finite system size increases the magnitude of the discontinuity at the Fermi surface in QMC. This effect was found to decrease slowly with system size in the homogeneous electron gas~\cite{Holzmann2009}. This FSE  was analyzed and understood in the homogeneous electron gas~\cite{Holzmann2009,Holzmann2011}. We adopted the same approach here and found good results. In particular, we corrected the FSE using the leading-order expression
