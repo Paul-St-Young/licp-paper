@@ -109,7 +109,7 @@ Figure ~\ref{fig:sl-jp-djp} shows the valence Compton profiles of solid and liqu
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{li58_sl-jp}
-\caption{Valence electron Compton profiles of solid (solid line) and liquid (dashed line) lithium from QMC (thin) and experiment (thick). The top panel shows the Compton profiles on an absolute scale. The bottom panel shows  $\Delta J(p)=J_{QMC}-J_{exp}$.}%the QMC Compton profiles relative to the experiment.
+\caption{Valence electronic Compton profiles of solid (solid line) and liquid (dashed line) lithium from QMC (thin) and experiment (thick). The top panel shows the Compton profiles on an absolute scale. The bottom panel shows  $\Delta J(p)=J_{QMC}-J_{exp}$.}%the QMC Compton profiles relative to the experiment.
 \label{fig:sl-jp-djp}
 \end{figure}
 
@@ -118,7 +118,7 @@ The main change is a density-induced outward shift of the Fermi surface. This sh
 
 \begin{figure}[h]
 \includegraphics[width=\linewidth]{li52e_sl-djp}
-\caption{Difference between solid and liquid valence electron Compton profiles.\label{fig:s-l-djp}}
+\caption{Difference between solid and liquid valence electronic Compton profiles.\label{fig:s-l-djp}}
 \end{figure}
 
 As mentioned in the beginning of this section, we process the raw QMC data in several steps to make them comparable to experiment. In the following, we present perfect lithium crystal QMC calculations, which we use to validate the processing steps.
@@ -166,12 +166,14 @@ The Compton profile reported by Filippi and Ceperley \cite{Filippi1999} is close
 \caption{Spherical average of the valence Compton profile of lithium BCC crystal at $r_s=3.25$. The red solid line is the best QMC result with all processing steps applied. The red dotted curve is our pseudopotential QMC result. The black curve is experiment on polycrystal lithium. \label{fig:crystal-vcp}}
 \end{figure}
 
-Taking our best QMC Compton profiles (colored line in Fig.~\ref{fig:sl-jp-djp}) as reference, we show the remaining difference between the QMC and the experiment Compton profiles as the black curves in Fig.~\ref{fig:sl-corrections}. We also show the effect of each processing step in the calculation of $J(p)$. %As shown in Fig.~\ref{fig:crystal-ppc}, three corrections are considered: pseudopotential, finite-size, and convolution. All three lower the value of $J(0)$, bringing it closer to experiment. The pseudopotential correction is dominant over the convolution and finite-size corrections. Further, the pseudopotential correction is the only one that contributes at momenta far above the Fermi momentum ($p>0.75$ a.u.).
+Taking our best QMC Compton profiles (colored line in Fig.~\ref{fig:sl-jp-djp}) as reference, we show the remaining difference between the QMC and the experiment Compton profiles as the black curves in Fig.~\ref{fig:sl-corrections}. We also show the effect of each processing step in the calculation of $J(p)$. Finite-size and convolution corrections both peak at the Fermi momentum and are small at the scale of the remaining discrepancy. The density correction is small in the solid but substantial in the liquid, because QMC calculations have been performed close to the solid density. In both cases, the density correction contracts the Fermi sphere and has little effect above the Fermi momentum. In contrast, the pseudopotential correction nearly vanishes at the Fermi momentum, smoothly transfers low-momentum components to high momenta, and remains non-zero well above the Fermi momentum. The $n(k)$ tail correction is needed to recover the normalization sum rule, because the QMC $n(k)$ is truncated at a finite momentum $k_c$. The exact shape of $n(k)$ tail may not be accurate above $k_c$, because the assumed functional form is simple (see supplemental materials). Fortunately, the effect of $n(k)$ tail within $k_c$ is simply to shift the entire Compton profile up by a constant as dictated by the normalization sum rule. The tail and pseudopotential corrections are the only ones that can change the high-momentum tail of the Compton profile.
+
+%As shown in Fig.~\ref{fig:crystal-ppc}, three corrections are considered: pseudopotential, finite-size, and convolution. All three lower the value of $J(0)$, bringing it closer to experiment. The pseudopotential correction is dominant over the convolution and finite-size corrections. Further, the pseudopotential correction is the only one that contributes at momenta far above the Fermi momentum ($p>0.75$ a.u.).
 
 \begin{figure}
 \includegraphics[width=\linewidth]{li58_solid-the-djp}
 \includegraphics[width=\linewidth]{li58_liquid-the-djp}
-\caption{Compton profile corrections. The solid black curve is experiment relative to ``best'' theory. The dotted black curve is experiment relative to pseudopotential QMC result with no correction. The colored curves are various corrections to the theoretical Compton profile. \label{fig:sl-corrections}}
+\caption{Valence Compton profile corrections. The solid black curve is experiment relative to ``best'' theory. The dotted black curve is experiment relative to pseudopotential QMC result with no correction. Each colored curve shows the effect of neglecting a processing step from the theoretical Compton profile. When added to the processed result (solid black curve), the sum of all colored curves approximately recovers the unprocessed result (dotted black curve). \label{fig:sl-corrections}}
 \end{figure}
 
 \section{Discussion} \label{sec:discussion}
@@ -217,11 +219,16 @@ backflow effects on the lithium Compton profiles should be addressed in the futu
 
 {\bf Fermi surface}  The Fermi surface of BCC lithium is anisotropic with pronounced secondary features. %The KS-LDA main Fermi surface is a mesh of octagons facing [100], [110], triangles facing [111], and square patches to close the surface. The whole surface curves to approximate a sphere, somewhat like a soccer ball. Further, there is a clear secondary Fermi surface along the [110] direction at $p=(0.6, 0.6, 0)$ a.u..
 The DFT Fermi surface is used in the QMC simulation to determine which momentum states to occupy.
-For solid lithium the Fermi surface is nearly spherical \david{can we find de Haas -Van Alphen data on the non-spherical parameter and compare to DFT?} 
-\mh{Our inclusion of thermal configurations leads to a broadening of the Fermi surface, washing out
-any small differences between DFT and the exact one.}
+For solid lithium the Fermi surface is nearly spherical. Our DFT Fermi surface of the BCC crystal has a maximum anisotropy of $\delta=5.0\%$, where
+\begin{equation} \label{eq:ani-delta}
+\delta \equiv \dfrac{k_F^{[110]} - k_F^{[100]}}{k_F^{HEG}}.
+\end{equation}
+This is in good agreement with the de Haas-van Alphen experiment performed by M. B. Hunt et al.~\cite{Hunt1989}, which reported a maximum anisotropy of $\delta=4.8\pm 0.3\%$. Our DFT result differs from previous calculations by A. H. MacDonald $\delta=3.3\%$~\cite{MacDonald1980} and H. Bross $\delta=5.9\%$~\cite{Bross2005}, likely due to differences in the density functional and pseudopotential.
+%\david{can we find de Haas -Van Alphen data on the non-spherical parameter and compare to DFT?} 
+%\mh{Our inclusion of thermal configurations leads to a broadening of the Fermi surface, washing out
+%any small differences between DFT and the exact one.}
 While the DFT Fermi surface may not be accurate in the crystal,  a liquid is isotropic and will have a spherical Fermi surface.
-Given that our liquid - solid Compton profile difference agrees well with experiment (Fig.~\ref{fig:s-l-djp}), we do not consider Fermi surface shape to be responsible for the remaining discrepancy.
+Given that our solid - liquid Compton profile difference agrees well with experiment (Fig.~\ref{fig:s-l-djp}), we do not consider Fermi surface shape to be responsible for the remaining discrepancy.
 
 {\bf Electron-phonon interaction} We capture disorder effects due to phonons by averaging over thermal atomic configurations. However, other phonon effects are absent from our QMC simulations because the lithium ions are clamped. Phonons scatter quasi-particles and decrease their life times. Thus, we expect the inclusion of electron-phonon interaction to decrease the magnitude of the discontinuity in the momentum distribution. Calculations of the coupled electron-phonon system within the Einstein or Debye model~\cite{PhysRev.131.993} shows that the resulting broadening
 at zero temperature is essentially given by the Debye frequency.
