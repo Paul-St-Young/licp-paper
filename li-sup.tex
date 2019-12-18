@@ -121,6 +121,11 @@ The momentum distribution is obtained on a cubic regular grid with spacing $dk=0
 %The tail of the momentum distribution is extended to at least $3.0$ a.u. in post-processing.
 %in 1/48th of the cubic reciprocal space, representing the irreducible wedge. The results are unfolded using cubic symmetries onto a regular grid with a spherical cutoff.
 
+\begin{figure}[h]
+\includegraphics[width=0.8\linewidth]{li53_anofk-n54-ta-nk2d}
+\caption{[100] slice of n($\bs{k}$) at $k_x=0$ from canonical twist average grid (CTA) and grand-canonical twist average grid (GCTA). Occupation outside the Fermi surface can be seen as small extrusions along $k_y$ or $k_z$ in the canonical case. Both the main and secondary Fermi surfaces are visibly more circular in the grand-canonical case.}
+\end{figure}
+
 A QMC Compton profile is computed in four steps. First, the 3D DMC $n(\bs{k})$ is linearly extrapolated to reduce the mixed-estimator bias using VMC data. Second, the linearly-extrapolated $n(\bs{k})$ is spherically averaged to obtain a 1D distribution $n(k)$. Third, the 1D $n(k)$ is extended to large k by fitting the tail region ($k > 1.2$ a.u.) of QMC $n(k)$ to a model function eqn.~(\ref{eq:nktail}), which is inspired by the momentum distribution of hydrogen-like atoms
 \begin{align} \label{eq:nktail}
 n_{tail}(k, A, Z) = 2A\left(\dfrac{2Z}{(k^2+Z^2)^2}\right)^2,
