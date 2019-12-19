@@ -92,7 +92,7 @@ QMC energies of the all-electron simulations are shown in the first three rows o
 Energies from the pseudopotential simulations are shown in the remaining rows of Table~\ref{tab:qmc-etv}. The difference between pseudopotential DMC and VMC total energies are consistently around 1 mha/e. Further, the timestep error is $\sim$ 0.1 mha/e/a.u. and the mixed-estimator error of the kinetic energy is $<$ 1 mha/e. These small differences verify the high quality of our trial wavefunction for the valence electrons.
 
 \begin{table}[h]
-\caption{QMC energies and variance. All energies are reported in ha/e. Variance is in ha$^2$/e. Timestep is in ha$^{-1}$. Monte Carlo acceptance rate (acc) is in percent.}
+\caption{QMC energies and variance. All energies are reported in ha/e. Variance is in ha$^2$/e. Timestep is in ha$^{-1}$. Monte Carlo acceptance rate (acc) is in percent. Classical temperature is shown in Kelvin. $\langle\rangle$ indicates average over thermal ensemble and grand-canonical twist grid.}
 \include{tables/li61b_eta}
 \label{tab:qmc-etv}
 \end{table}
@@ -111,7 +111,7 @@ where $\rho_{\bs{k}} = \sum\limits_j^{N_e} e^{i\bs{r}_j\cdot\bs{k}}$ is the coll
 %\includegraphics[scale=0.6]{li40bg_dsk-bfd-fc}
 \includegraphics[width=0.48\linewidth]{li40bg_dsk-bfd}
 \includegraphics[width=0.48\linewidth]{li40bg_dsk-fc}
-\caption{Electronic static structure factor of pseudopotential (left) and all-electron (right) QMC simulations in 54-atom and 432-atom simulation cells. The black line in the left plot is RPA $S(k)$ at valence density $r_s=3.25$. It fits lithium valence $S(k)$ remarkably well for $k<0.4 a.u.$. In the right plot, the black line is RPA $S(k)$ at density $r_s=3.25/\sqrt{3}$. \label{fig:qmc-dsk}}
+\caption{Electronic static structure factor of pseudopotential (left) and all-electron (right) QMC simulations in 54-atom and 432-atom simulation cells. The black line in the left plot is RPA $S(k)$ at valence density $r_s=3.25$. It fits lithium valence $S(k)$ remarkably well for $k<0.4$ bohr$^{-1}$. In the right plot, the black line is RPA $S(k)$ at density $r_s=3.25/\sqrt{3}$. \label{fig:qmc-dsk}}
 \end{figure}
 
 
@@ -139,14 +139,14 @@ J(p) = \left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \left[
 where $\Omega$ is the volume of the supercell, $N_{Li}$ is the number of lithium atoms in the supercell, and $A^*$, $Z^*$ are chosen to satisfy momentum distribution sum rules. %The prefactor is needed because $n(\bs{k})$ in simulation is scaled by reciprocal volume and is always in the range [0, 2].
 The sum-rules of the momentum distribution and the Compton profile in our convention are
 \begin{align}
-\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k}) =& \braket{N_e}/N_{Li}, \label{eq:nsum} \\
-\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k})~\frac{\hbar^2k^2}{2m_e} =& \braket{T}/N_{Li}, \label{eq:tsum} \\
+\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k}) =& \braket{N_e}/N_{Li}\equiv \bar{N}, \label{eq:nsum} \\
+\left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \int d\bs{k} n(\bs{k})~\frac{\hbar^2k^2}{2m_e} =& \braket{T}/N_{Li} \equiv \bar{T}, \label{eq:tsum} \\
 \int_{-\infty}^{\infty} dp J(p) =& \braket{N_e}/N_{Li}, \label{eq:jpsum}
 \end{align}
 where $\braket{T}$ is the expectation value of the total kinetic energy. We find it important to extend the tail of $n(k)$ so that it satisfies the sum rules. The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}, along with sum-rule compliance.
 
 \begin{table}[h]
-\caption{Fits to $n(k)$ tails and sum rule compliance. The normalization sum rule eqn.~(\ref{eq:nsum}) is labeled ``nsum''. The kinetic energy sum rule eqn.~(\ref{eq:tsum}) is labeled ``tsum''. ``nsum0'' and ``tsum0'' are expected sum-rule values calculated from Table~\ref{tab:qmc-etv}. All sum-rule integrals are split into two parts at $k=k_c$ in the same way as eq.~(\ref{eq:jp1d}). $\Delta n(k_c)\equiv n_{tail}(k_c)-n(k_c)$ is the difference between the fit analytical tail and QMC data at the split point. The second row is ``full-core valence'' obtained by subtracting the HF core contribution from the QMC ae calculation. The HF core kinetic energy of the Li atom is 7.2239067 ha.}
+\caption{Fits to $n(k)$ tails and sum rule compliance. $\bar{N}$ and $\bar{T}$ are the normalization and kinetic energy sum rules as defined in eqn.~(\ref{eq:nsum}) an (\ref{eq:tsum}). $\bar{N}_0$ and $\bar{T}_0$ are expected sum-rule values calculated from Table~\ref{tab:qmc-etv}. All sum-rule integrals are split into two parts at $k=k_c$ in the same way as eq.~(\ref{eq:jp1d}). $\Delta n(k_c)\equiv n_{tail}(k_c)-n(k_c)$ is the difference between the fit analytical tail and QMC data at the split point. The second row is ``full-core valence'' obtained by subtracting the HF core contribution from the QMC ae calculation. The HF core kinetic energy of the Li atom is 7.2239067 ha.}
 \include{tables/li62e_ntsum-tail}
 \label{tab:crystal-ntsum}
 \end{table}
