@@ -92,12 +92,12 @@ Disordered configurations were generated from classical molecular dynamics (MD) 
 The orbitals in the Slater determinant were obtained using KS-LDA. We used a planewave cutoff of 256 Ry in the all-electron calculation. The resultant orbitals were modified to remove the approximate electron-ion cusp, which is exactly re-introduced in the Jastrow. All pseudopotential calculations used the BFD pseudopotential and a planewave cutoff of 16 Ry.
 
 QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study~\cite{Filippi1999}. 
-QMC energies of the all-electron simulations are shown in the first three rows of Table~\ref{tab:qmc-etv}. Timestep error is $\sim$ 0.1 mha/e/a.u.. Mixed-estimator error of the kinetic energy is $\sim$ 4 mha/e. The mixed-estimator errors are larger than their pseudopotential counterparts. Nevertheless, our DMC total energy of -2.5142 ha/e is within 1.5 mha/e of the -2.5129 ha/e obtained in a previous QMC study using localized basis and the PBE functional~\cite{Rasch2015}. The previous study was performed at a valence density of $r_s=3.24$, which is very close to our $r_s=3.25$.
+QMC energies of the all-electron simulations are shown in the first three rows of Table~\ref{tab:qmc-etv}. Timestep error is $\sim$ 0.1 mha/e/a.u.. Mixed-estimator error of the kinetic energy is $\sim$ 4 mha/e. The mixed-estimator errors are larger than their pseudopotential counterparts. Nevertheless, our DMC total energy of -2.5152 ha/e is 2.3 mha/e lower than the -2.5129 ha/e obtained in a previous QMC study using localized basis and the PBE functional~\cite{Rasch2015}. The previous study was performed at a valence density of $r_s=3.24$, which is close to our $r_s=3.25$.
 Energies from the pseudopotential simulations are shown in the remaining rows of Table~\ref{tab:qmc-etv}. The difference between pseudopotential DMC and VMC total energies are consistently around 1 mha/e. Further, the timestep error is $\sim$ 0.1 mha/e/a.u. and the mixed-estimator error of the kinetic energy is $<$ 1 mha/e. These small differences verify the high quality of our trial wavefunction for the valence electrons.
 
 \begin{table}[h]
 \caption{QMC energies and variance. All energies are reported in ha/e. Variance is in ha$^2$/e. Timestep is in ha$^{-1}$. Monte Carlo acceptance rate (acc) is in percent. Classical temperature is shown in Kelvin. $\langle\rangle$ indicates average over thermal ensemble and grand-canonical twist grid.}
-\include{tables/li61b_eta}
+\include{tables/li61c_eta}
 \label{tab:qmc-etv}
 \end{table}
 
