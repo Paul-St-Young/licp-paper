@@ -89,9 +89,14 @@ Disordered configurations were generated from classical molecular dynamics (MD) 
 
 \subsection{QMC Energies}
 
-The orbitals in the Slater determinant were obtained using KS-LDA. We used a planewave cutoff of 256 Ry in the all-electron calculation. The resultant orbitals were modified to remove the approximate electron-ion cusp, which is exactly re-introduced in the Jastrow. All pseudopotential calculations used the BFD pseudopotential and a planewave cutoff of 16 Ry.
+The orbitals in the Slater determinant were obtained using KS-LDA. We used a planewave cutoff of 256 Ry in the all-electron calculation. The resultant orbitals were modified to remove the approximate electron-ion cusp, which is exactly re-introduced in the Jastrow. All pseudopotential calculations used the BFD pseudopotential and a planewave cutoff of 16 Ry. We used $8^3$ uniform twist grid for 54-atom cell and $4^3$ twist grid for 432-atom cell so that the same momenta are sampled at both sizes. In a cell with $N$ atoms, the twist-averaged energy per electron is calculated as
+\begin{equation}
+E_N \equiv \frac{1}{M}\sum\limits_{i=1}^{M}~\dfrac{E(N, \bs{\theta}_i)}{N_e(N, \bs{\theta}_i)},
+\end{equation}
+where $\bs{\theta}_i$ are the twist angles for the $M$ twists. Both the total energy $E(N, \bs{\theta}_i)$ and the number of electrons $N_e(N, \bs{\theta}_i)$ vary with twist.
 
-QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study~\cite{Filippi1999}. 
+QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study~\cite{Filippi1999}.
+The corresponding BCC lattice constant is $3.49294$ \AA.
 QMC energies of the all-electron simulations are shown in the first three rows of Table~\ref{tab:qmc-etv}. Timestep error is $\sim$ 0.1 mha/e/a.u.. Mixed-estimator error of the kinetic energy is $\sim$ 4 mha/e. The mixed-estimator errors are larger than their pseudopotential counterparts. Nevertheless, our DMC total energy of -2.5152 ha/e is 2.3 mha/e lower than the -2.5129 ha/e obtained in a previous QMC study using localized basis and the PBE functional~\cite{Rasch2015}. The previous study was performed at a valence density of $r_s=3.24$, which is close to our $r_s=3.25$.
 Energies from the pseudopotential simulations are shown in the remaining rows of Table~\ref{tab:qmc-etv}. The differences between pseudopotential DMC and VMC total energies are consistently around 1 mha/e. Further, the timestep error is $\sim$ 0.1 mha/e/a.u. and the mixed-estimator error of the kinetic energy is $<$ 1 mha/e. These small differences verify the high quality of our trial wavefunction for the valence electrons.
 
@@ -103,7 +108,7 @@ Energies from the pseudopotential simulations are shown in the remaining rows of
 
 \subsection{QMC Electronic Structure Factor}
 
-The fluctuating electronic structure factor
+The fluctuating electronic structure factor is defined as~\cite{Holzmann2016}
 \begin{align}
 \delta S(k) \equiv \left\langle
 (\rho_{\bs{k}}-\bar{\rho}_{\bs{k}})^* (\rho_{\bs{k}}-\bar{\rho}_{\bs{k}})
@@ -130,11 +135,11 @@ The momentum distribution is obtained on a cubic regular grid with spacing $dk=0
 \caption{[100] slice of n($\bs{k}$) at $k_x=0$ from canonical twist average grid (CTA) and grand-canonical twist average grid (GCTA). Occupation outside the Fermi surface can be seen as small extrusions along $k_y$ or $k_z$ in the canonical case. Both the main and secondary Fermi surfaces are visibly more circular in the grand-canonical case.}
 \end{figure}
 
-A QMC Compton profile is computed in four steps. First, the 3D DMC $n(\bs{k})$ is linearly extrapolated to reduce the mixed-estimator bias using VMC data. Second, the linearly-extrapolated $n(\bs{k})$ is spherically averaged to obtain a 1D distribution $n(k)$. Third, the 1D $n(k)$ is extended to large k using a model function eqn.~(\ref{eq:nktail}), which is inspired by the momentum distribution of hydrogen-like atoms
+A QMC Compton profile is computed in four steps. First, the 3D DMC $n(\bs{k})$ is linearly extrapolated to reduce the mixed-estimator bias using VMC data. Second, the linearly-extrapolated $n(\bs{k})$ is spherically averaged to obtain a 1D distribution $n(k)$. Third, the 1D $n(k)$ is extended to large k using a model function Eq.~(\ref{eq:nktail}), which is inspired by the momentum distribution of hydrogen-like atoms
 \begin{align} \label{eq:nktail}
 n_{tail}(k, A, Z) = 2A\left(\dfrac{2Z}{(k^2+Z^2)^2}\right)^2,
 \end{align}
-where the $A$ and $Z$ are parameters, chosen to satisfy the sum rules as shown in Table~\ref{tab:crystal-ntsum}. Fourth and finally, the 1D $n(k)$ is integrated to obtain the spherically-averaged Compton profile $J(p)$ via eqn.~(\ref{eq:jp1d}) and split into two parts at a cutoff momentum $k_c$
+where the $A$ and $Z$ are parameters, chosen to satisfy the sum rules as shown in Table~\ref{tab:crystal-ntsum}. Fourth and finally, the 1D $n(k)$ is integrated to obtain the spherically-averaged Compton profile $J(p)$ via Eq.~(\ref{eq:jp1d}) and split into two parts at a cutoff momentum $k_c$
 \begin{align} \label{eq:jp1d}
 J(p) = \left( \dfrac{(2\pi)^3}{\Omega/N_{Li}} \right)^{-1} \left[
 \int\limits_p^{k_c} k n(k) dk + \int\limits_{k_c}^{\infty} k n_{tail}(k, A^*, Z^*) dk
@@ -148,15 +153,16 @@ The sum-rules of the momentum distribution and the Compton profile in our conven
 \int_{-\infty}^{\infty} dp J(p) =& \braket{N_e}/N_{Li}, \label{eq:jpsum}
 \end{align}
 where $\braket{T}$ is the expectation value of the total kinetic energy.
-The fitted values in the tail function eqn.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}, along with sum-rule compliance.
+The fitted values in the tail function Eq.~(\ref{eq:nktail}) are shown in Tables~\ref{tab:crystal-ntsum}, along with sum-rule compliance.
 
 \begin{table}[h]
-\caption{$n(k)$ tails parameters fit to sum rule. $\bar{N}$ and $\bar{T}$ are the normalization and kinetic energy sum rules as defined in eqn.~(\ref{eq:nsum}) an (\ref{eq:tsum}). $\bar{N}_0$ and $\bar{T}_0$ are the expected sum-rule values calculated from Table~\ref{tab:qmc-etv}. All sum-rule integrals are split into two parts at $k=k_c$ in the same way as eq.~(\ref{eq:jp1d}). $\Delta n(k_c)\equiv n_{tail}(k_c)-n(k_c)$ is the difference between the fit analytical tail and QMC data at the split point. The second row is ``full-core valence'' obtained by subtracting the HF core contribution from the QMC ae calculation. The HF core kinetic energy of the Li atom is 7.2239067 ha.}
+\caption{$n(k)$ tails parameters fit to sum rule. $\bar{N}$ and $\bar{T}$ are the normalization and kinetic energy sum rules as defined in Eq.~(\ref{eq:nsum}) an (\ref{eq:tsum}). $\bar{N}_0$ and $\bar{T}_0$ are the expected sum-rule values calculated from Table~\ref{tab:qmc-etv}. All sum-rule integrals are split into two parts at $k=k_c$ in the same way as Eq.~(\ref{eq:jp1d}). $\Delta n(k_c)\equiv n_{tail}(k_c)-n(k_c)$ is the difference between the fit analytical tail and QMC data at the split point. The second row is ``full-core valence'' obtained by subtracting the HF core contribution from the QMC ae calculation. The HF core kinetic energy of the Li atom is 7.2239067 ha.}
 \include{tables/li62e_ntsum-tail}
 \label{tab:crystal-ntsum}
 \end{table}
 
-Tail models in Table~\ref{tab:crystal-ntsum} are shown along with QMC $n(k)$ data in Fig.~\ref{fig:qmc-tail-model}. The QMC all-electron $n(k)$ for the crystal appears to decay slightly slower than HF core $n(k)$ at large $k$. This causes the full-core valence momentum distribution to have a much longer tail than the pseudopotential ones.
+Tail models in Table~\ref{tab:crystal-ntsum} are shown along with QMC $n(k)$ data in Fig.~\ref{fig:qmc-tail-model}. The QMC all-electron $n(k)$ for the crystal appears to decay slightly slower than HF core $n(k)$ at large $k$. This causes the full-core valence momentum distribution to have a much longer tail than the pseudopotential ones. 
+The finite-size error of $n(k)$ is corrected to leading order as demonstrated in Eq. (5) and Fig. 8 in the main article.
 
 \begin{figure}[h]
 \begin{minipage}{0.49\linewidth}
@@ -169,6 +175,33 @@ Tail models in Table~\ref{tab:crystal-ntsum} are shown along with QMC $n(k)$ dat
 \end{minipage}
 \caption{Models of the high-momentum tail of $n(k)$ based on sum-rule compliance. Left plot shows all-electron momentum distribution from QMC (thick gray line) and Li atomic core contribution from HF (dashed black line). The thin gray line is the $n(k)$ tail model for QMC. Right plot shows valence momentum distributions from QMC (thick colored lines). Each thin line is the tail model for the QMC $n(k)$ of corresponding color. The statistical error of QMC $n(k)$ is on the order of $10^{-4}$ for $k>1.5$, so data close to $10^{-4}$ at large $k$ are not reliable.}
 \label{fig:qmc-tail-model}
+\end{figure}
+
+\subsection{Energy Finite-size Corrections}
+
+Having obtained converged static structure factor $S(k)$ and momentum distribution $n(k)$, we can calculate finite-size corrections to the kinetic and potential energies~\cite{PhysRevLett.97.076404,Holzmann2016}.
+Given the excellent agreement between QMC $S(k)$ and RPA $S(k)$ in the inaccessible $k\rightarrow0$ region, we used RPA $S(k)$ and Jastrow pair function $U(k)$, as derived by Gaskell~\cite{Gaskell1961}, to calculate finite-size corrections. The results are shown in Table.~\ref{tab:rpa-dtdv}.
+We also calculated potential corrections using QMC $S(k)$ as a check of the RPA results. Finally, we check the Jastrow-based kinetic energy correction using the difference of kinetic sum rule values between corrected and finite-size $n(k)$. The $n(k)$ kinetic correction agrees with the RPA Jastrow-based correction within 0.1 mha/e.
+
+\begin{table}[h]
+\caption{Finite-size correction of kinetic and potential energies. The RPA row is obtained by assuming Gaskell form of $S(k)$ and $U(k)$. The spline $S(k)$ row uses a numerical spline of QMC $S(k)$. The $\bar{T}$ $\delta n(k)$ row uses the change of kinetic sum rule from $n(k)$ leading-order finite size correction. $\delta$ denotes finite-size correction. \label{tab:rpa-dtdv}}
+\begin{tabular}{ccccc}
+\toprule
+& $\delta V_{432}$ & $\delta T_{432}$ & $\delta V_{54}$ & $\delta T_{54}$ \\
+\midrule
+RPA & 0.17 & 0.15 & 1.38 & 1.06 \\
+spline $S(k)$ & 0.17 & & 1.39 & \\
+$\bar{T}$ $\delta n(k)$ & & 0.16 & & 1.14 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The finite-size corrections obtained in Table~\ref{tab:rpa-dtdv} are applied to the perfect crystal BCC lithium total energies and compared with $1/N$ extrapolations in Fig.~\ref{fig:etot-fsc}. All corrected energies are within 0.1 mha/e of the extrapolated values. This validates our finite-size correction approaches on the total energies and the momentum distribution.
+
+\begin{figure}[h]
+\includegraphics[width=0.8\linewidth]{li53_extrap-srat-with-dnk}
+\caption{Finite-size corrections to the total, kinetic, and potential energies of BCC lithium in the perfect crystal configuration. The crosses are QMC energies obtained in a finite simulation cell. The pluses include corrections derived from RPA structure factor and Jastrow pair function. Further, the kinetic finite-size corrections are checked using the leading-order correction to the momentum distribution (circles in the middle panel). The black lines through the crosses are $1/N$ extrapolations, while the gray horizontal bars mark the extrapolated values and their error bars. All corrected energies agree with $1/N$ extrapolation within 0.1 mha/e.}
+\label{fig:etot-fsc}
 \end{figure}
 
 \bibliographystyle{apsrev4-1}
