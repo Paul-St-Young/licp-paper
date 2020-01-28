@@ -59,10 +59,10 @@ breaklines=true
 }
 
 \begin{document}
-%\begin{CJK*}{UTF8}{}
+\begin{CJK*}{UTF8}{}
 \title{Quantum Monte Carlo Compton profiles of solid and liquid lithium (Supplemental Materials)}
-\author{Yubo Yang}
-%\author{Yubo Yang (杨煜波)}
+%\author{Yubo Yang}
+\author{Yubo Yang (杨煜波)}
 \affiliation{Department of Physics, University of Illinois, Urbana, Illinois 61801, USA}
 \author{Nozomu Hiraoka}
 \affiliation{National Synchrotron Radiation Research Center, Hsinchu 30076, Taiwan}
@@ -74,7 +74,7 @@ breaklines=true
 \author{David M. Ceperley}
 \affiliation{Department of Physics, University of Illinois, Urbana, Illinois 61801, USA}
 \maketitle
-%\end{CJK*}
+\end{CJK*}
 
 \subsection{Disordered Configurations}
 
@@ -92,10 +92,10 @@ Disordered configurations were generated from classical molecular dynamics (MD) 
 The orbitals in the Slater determinant were obtained using KS-LDA. We used a planewave cutoff of 256 Ry in the all-electron calculation. The resultant orbitals were modified to remove the approximate electron-ion cusp, which is exactly re-introduced in the Jastrow. All pseudopotential calculations used the BFD pseudopotential and a planewave cutoff of 16 Ry.
 %We used $8^3$ uniform twist grid for 54-atom cell and $4^3$ twist grid for 432-atom cell so that the same momenta are sampled at both sizes.
 In a cell with $N$ atoms, the twist-averaged energy per electron is calculated as
-\begin{equation}
+\begin{equation} \label{eq:intensive}
 E_N \equiv \frac{1}{M}\sum\limits_{i=1}^{M}~\dfrac{E(N, \bs{\theta}_i)}{N_e(N, \bs{\theta}_i)},
 \end{equation}
-where $\bs{\theta}_i$ are the twist angles for a total of $M$ twists. Both the total energy $E(N, \bs{\theta}_i)$ and the number of electrons $N_e(N, \bs{\theta}_i)$ vary with twist.
+where $\bs{\theta}_i$ are the twist angles for a total of $M$ twists. Both the total energy $E(N, \bs{\theta}_i)$ and the number of electrons $N_e(N, \bs{\theta}_i)$ vary with twist. We find that the average of the intensive total energy per electron eq.~(\ref{eq:intensive}) is $\sim$ 1 mha/e lower than the ratio of extensive total energy to the total number of particles in the 54-atom cell. However, this difference vanishes as $1/N$.
 
 QMC calculations were carried out at valence density $r_s=3.25$, consistent with the previous study~\cite{Filippi1999}.
 The corresponding BCC lattice constant is $3.49294$ \AA.
@@ -201,7 +201,7 @@ $\bar{T}$ $\delta n(k)$ & & 0.16 & & 1.14 \\
 The finite-size corrections obtained in Table~\ref{tab:rpa-dtdv} are applied to the perfect crystal BCC lithium total energies and compared with $1/N$ extrapolations in Fig.~\ref{fig:etot-fsc}. All corrected energies are within 0.1 mha/e of the extrapolated values. This validates our finite-size correction approaches for the total energies and the momentum distribution.
 
 \begin{figure}[h]
-\includegraphics[width=0.8\linewidth]{li53_extrap-srat-with-dnk}
+\includegraphics[width=0.6\linewidth]{li53_extrap-srat-with-dnk}
 \caption{Finite-size corrections to the total, kinetic, and potential energies of BCC lithium in the perfect crystal configuration. The crosses are QMC energies obtained in a finite simulation cell. The pluses include corrections derived from RPA structure factor and Jastrow pair function. Further, the kinetic finite-size corrections are checked using the leading-order correction to the momentum distribution (circles in the middle panel). The black lines through the crosses are $1/N$ extrapolations, while the gray horizontal bars mark the extrapolated values and their error bars. All corrected energies agree with $1/N$ extrapolation within 0.1 mha/e.}
 \label{fig:etot-fsc}
 \end{figure}
