@@ -35,10 +35,10 @@
 \makeatother
 
 \begin{document}
-%\begin{CJK*}{UTF8}{}
+\begin{CJK*}{UTF8}{}
 \title{Quantum Monte Carlo Compton profiles of solid and liquid lithium}
-\author{Yubo Yang}
-%\author{Yubo Yang (杨煜波)}
+%\author{Yubo Yang}
+\author{Yubo Yang (杨煜波)}
 \affiliation{Department of Physics, University of Illinois, Urbana, Illinois 61801, USA}
 \author{Nozomu Hiraoka}
 \affiliation{National Synchrotron Radiation Research Center, Hsinchu 30076, Taiwan}
@@ -55,7 +55,7 @@ We computed the Compton profile of solid and liquid lithium using quantum Monte 
 \end{abstract}
 \pacs{}
 \maketitle
-%\end{CJK*}
+\end{CJK*}
 
 \section{Introduction} \label{sec:intro}
 
@@ -85,7 +85,7 @@ where $u(\bs{r})$ is the electron-electron Jastrow pair function, $\chi(\bs{r})$
 
 In variational Monte Carlo (VMC), we sample $\vert \psi_T \vert^2$ using Metropolis Monte Carlo and directly calculate properties from the many-body wavefunction. The momentum distribution is calculated using the direct estimator in reciprocal space\cite{McMillan1965}. In DMC, an ensemble of electron configurations evolve according to the Green's function of the non-relativistic Schr\"odinger equation in imaginary time. Using the trial wavefunction $\psi_T$ as guiding function and phase reference, the long-time solution samples the mixed distribution $\psi^*_T\psi_{FP}$, in the limit of small time step. $\psi_{FP}$ is the fixed-phase ground-state wavefunction. If the phase of $\psi_T$ were exact, then $\psi_{FP}$ would be the exact ground-state wavefunction.~\cite{Ortiz1993} The difference between the expectation value of an observable in the fixed-phase and the mixed distributions is the mixed-estimator bias. We gauge simulation quality by monitoring kinetic, potential, and total energies as well as pair correlation functions and the momentum distribution. We observe fast equilibration, small variance and small mixed-estimator bias in all monitored quantities. The DMC momentum distribution is linearly extrapolated to remove the mixed-estimator bias. For more details on the computational methods and data processing, see the supplementary materials.
 
-We use GCTABC to improve the momentum distribution \cite{PhysRevLett.97.076404,Holzmann2009}. A previous QMC calculation~\cite{Filippi1999} used real wavefunctions and canonical twist average boundary condition (CTABC); each boundary condition (twist) had the same number of electrons. Use of real trial functions restricted the accessible momenta to those commensurate with the simulation cell. CTABC can occupy states outside of the Fermi surface at certain twists, which artificially smears the Fermi surface. In contrast, the grand-canonical twist average technique enforces constant chemical potential at all twists. We adjust the number of electrons at each twist such that no state outside the Fermi surface is occupied. This allows us to sample the momentum distribution at momenta arbitarily close to the Fermi surface while maintaining a sharp Fermi surface. In practice, we impose the occupation of the orbitals in the Slater determinant according to the LDA Fermi energy. In principle, one might modify the Fermi surface by estimating the chemical potential directly within QMC \cite{yang2019electronic}. However, this is much more computationally demanding and is beyond the scope of the current study and not thought to be necessary for lithium.
+We use GCTABC to improve the momentum distribution \cite{PhysRevLett.97.076404,Holzmann2009}. A previous QMC calculation~\cite{Filippi1999} used real wavefunctions and canonical twist average boundary condition (CTABC); each boundary condition (twist) had the same number of electrons. Use of real trial functions restricted the accessible momenta to those commensurate with the simulation cell. CTABC can occupy states outside of the Fermi surface at certain twists, which artificially smears the Fermi surface. In contrast, the grand-canonical twist average technique enforces constant chemical potential at all twists. We adjust the number of electrons at each twist such that no state outside the Fermi surface is occupied. This allows us to sample the momentum distribution at momenta arbitrarily close to the Fermi surface while maintaining a sharp Fermi surface. In practice, we impose the occupation of the orbitals in the Slater determinant according to the LDA Fermi energy. In principle, one might modify the Fermi surface by estimating the chemical potential directly within QMC \cite{yang2019electronic}. However, this is much more computationally demanding and is beyond the scope of the current study and not thought to be necessary for lithium.
 
 In the perfect crystal, the full-core simulation contains 54 lithium atoms, while the pseudopotential simulations contain 54 or 432 atoms. We use MD with the modified embedded-atom potential (MEAM)~\cite{Baskes1992} to generate the disordered configurations.
 The MD temperatures were elevated to model quantum fluctuations of the nuclei~\cite{Filippi1998}.
